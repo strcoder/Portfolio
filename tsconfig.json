@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "lib": ["es6"],
+    "strict": true,
+    "allowJs": true,
+    "target": "es5",
+    "outDir": "dist",
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "typeRoots": [
+      "custom.d.ts"
+    ],
+  },
+}
