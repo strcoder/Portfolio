@@ -1,6 +1,10 @@
 import React from 'react';
 
-const Layout = () => {
+type LayoutProps = {
+  children: React.ReactElement,
+}
+
+const Layout = ({ children }: LayoutProps) => {
   return (
     <h1>Layout</h1>
   );
