@@ -60,7 +60,7 @@ const setResponse = (html: string, preloadedState: preloadState, manifest: any) 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta charset="utf-8" />
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Mulish:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Iceland&family=Raleway&family=Recursive&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"/>
         <link rel="stylesheet" type="text/css" href="${mainStyles}" />
         <title>Antonio Guzmán</title>

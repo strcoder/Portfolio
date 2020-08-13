@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  font-family: $font-family-base;
+  transition: $transition-theme;
+  &.light {
+    color: $dark;
+    background: $light-background;
+  }
+  &.dark {
+    color: $soft-color;
+    background: $dark-background;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $tertiary-color;
+}
+
+.btn, .btn-primary, .btn-secondary, .btn-tertiary, .btn-link, .btn-link-soft, .form-icon-btn {
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 10px 14px;
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+  text-transform: capitalize;
+  font-size: $font-size-base;
+  font-family: $font-family-base;
+  border-radius: $border-radius-lg;
+  transition: $transition-transform;
+}
+
+.btn, .btn-primary {
+  @include button();
+}
+
+.btn-secondary {
+  @include button($soft-color, $secondary-color);
+}
+
+.btn-tertiary {
+  @include button($soft-color, $tertiary-color);
+}
+
+.btn-link {
+  @include buttonLink();
+}
+
+.btn-link-soft {
+  @include buttonLink($soft-color);
+}
+
+.form-control {
+  & .form--input {
+    padding: 10px;
+    // padding: 0;
+    border-radius: $border-radius;
+    border: none;
+    // border: 1px solid lighten($gray-color, 60%);
+  }
+}
+
+.form-input-icon {
+  @include simpleInputIconForm($soft-color, $primary-color);
+}

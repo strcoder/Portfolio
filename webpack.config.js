@@ -26,7 +26,7 @@ module.exports = {
     publicPath: '/',
   },
   resolve: {
-    extensions: ['.js', '.ts', '.tsx'],
+    extensions: ['.js', '.ts', '.tsx', '.scss'],
   },
   optimization: {
     removeAvailableModules: false,
@@ -72,13 +72,6 @@ module.exports = {
         loader: 'eslint-loader',
       },
       {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
-      },
-      {
         test: /\.(s*)css$/,
         use: [
           {
@@ -93,6 +86,7 @@ module.exports = {
         loader: 'file-loader',
         options: {
           name: 'assets/[hash].[ext]',
+          esModule: false,
         },
       },
     ],

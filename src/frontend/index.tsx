@@ -4,7 +4,7 @@ import { Router } from 'react-router';
 import { createBrowserHistory } from 'history';
 import { Provider } from './Context';
 import App from './routes/App';
-import './index.scss';
+import './static/scss/index.scss';
 
 const history = createBrowserHistory();
 const preloadedState = window.__PRELOADED_STATE__;

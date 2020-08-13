@@ -1,0 +1,16 @@
+@mixin simpleInputIconForm($color, $background) {
+  display: grid;
+  grid-template-areas: "content";
+  & .form--input {
+    grid-area: content;
+    padding-right: 50px;
+    border-bottom: 1px solid $soft-color;
+  }
+  & .form-icon-btn {
+    grid-area: content;
+    color: $color;
+    background: $background;
+    justify-self: right;
+    border-radius: $border-radius;
+  }
+}
