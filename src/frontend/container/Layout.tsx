@@ -9,8 +9,6 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <AppBar />
-      <h1>Titulo</h1>
-      <p>Texto base</p>
       { children }
     </>
   );

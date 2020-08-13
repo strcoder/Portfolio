@@ -1,0 +1,83 @@
+@import './../../static/scss/utils/variables';
+
+.Hero {
+  grid-template-areas: 'contain';
+  justify-content: center;
+  justify-items: center;
+  transition: $transition-theme;
+  &.light {
+    color: $primary-color;
+  }
+  &.dark {
+    color: $soft-color;
+  }
+  &--background {
+    grid-area: contain;
+    width: 100%;
+    height: 100%;
+    transition: $transition-theme;
+    &.light {
+      background: rgba($gray-100, 0.6);
+    }
+    &.dark {
+      background: rgba($black, 0.5);
+    }
+  }
+  &__image {
+    grid-area: contain;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  &__body {
+    grid-area: contain;
+    align-self: center;
+    text-align: center;
+    justify-items: center;
+    padding-bottom: 100px;
+  }
+  &__helper.btn-link {
+    grid-area: contain;
+    align-self: flex-end;
+    margin-bottom: 120px;
+    &.dark {
+      color: $soft-color;
+    }
+    & i {
+      font-size: $icon-size-md;
+    }
+  }
+}
+
+.Hero__body--details {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  & > li {
+    padding: 0 5px;
+  }
+  & i {
+    font-size: 8px;
+  }
+}
+
+.Hero__body--links {
+  & a {
+    transition: $transition-theme;
+    padding: 0 10px;
+    font-size: $icon-size-sm;
+    font-weight: normal;
+  }
+  &.light a {
+    color: $primary-color;
+  }
+  &.dark a {
+    color: $soft-color;
+  }
+}
