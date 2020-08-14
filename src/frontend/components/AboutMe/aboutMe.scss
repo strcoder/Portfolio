@@ -1,0 +1,113 @@
+@import './../../static/scss/utils/variables';
+
+.AboutMe {
+  display: flex;
+  flex-wrap: wrap;
+  &__emoji {
+    width: 100%;
+    height: 50vh;
+    & img {
+      width: 100%;
+      object-fit: contain;
+      object-position: center;
+      filter: drop-shadow($box-shadow);
+    }
+  }
+  &--contain {
+    width: 100%;
+    padding: 0 25px;
+    text-align: center;
+    justify-items: center;
+    row-gap: 20px;
+  }
+  &__body, &__footer {
+    row-gap: 20px;
+    // padding-left: 25px;
+    // text-align: center;
+    justify-items: center;
+  }
+
+  &__footer {
+    &--contact {
+      display: flex;
+      align-items: center;
+    }
+    & nav a {
+      font-weight: normal;
+      font-size: $icon-size-sm;
+      transition: $transition-theme;
+    }
+    &.dark a {
+      color: $soft-color;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .AboutMe {
+    &--contain {
+      width: 100%;
+      padding: 0 30px;
+      text-align: left;
+      justify-items: left;
+      row-gap: 15px;
+    }
+    &__body, &__footer {
+      row-gap: 15px;
+      padding: 0 30px;
+      text-align: left;
+      justify-items: left;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .AboutMe {
+    padding-left: 100px;
+    padding-right: 50px;
+    &__emoji {
+      width: 40%;
+      height: 100vh;
+    }
+    &--contain {
+      width: 40%;
+      padding: 100px 0;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .AboutMe {
+    &--contain {
+      width: 40%;
+      padding: 250px 0;
+    }
+  }
+}
+
+@media (min-width: 1440px) and (min-height: 800px) {
+  .AboutMe {
+    &--contain {
+      padding: 150px 0;
+    }
+  }
+}
+
+@media (min-width: 1024px) and (min-height: 768px) {
+  .AboutMe {
+    &__emoji {
+      width: 40%;
+    }
+    &--contain {
+      width: 50%;
+    }
+  }
+}
+
+@media (min-width: 1280px) and (min-height: 800px) {
+  .AboutMe {
+    &--contain {
+      padding: 150px 0;
+    }
+  }
+}
