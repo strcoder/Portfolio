@@ -1,0 +1,104 @@
+@import './../../static/scss/utils/variables';
+
+.Project {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 200px 0;
+  align-items: center;
+  border-radius: $border-radius;
+  &.dark .btn-link {
+    color: $soft-color;
+  }
+}
+
+.ProjectCard {
+  & img {
+    width: 100%;
+    height: 30vh;
+    object-fit: contain;
+  }
+  &__changer {
+    display: flex;
+    justify-self: center;
+  }
+}
+
+.ProjectDetails {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-items: center;
+  justify-self: center;
+  width: 100%;
+  & h3, nav, p {
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+  &--tags {
+    align-items: center;
+  }
+
+  &--tags a {
+    padding-left: 10px;
+    transition: $transition-base;
+    align-self: center;
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  &--date strong {
+    padding-right: 10px;
+  }
+
+  &--url {
+    display: flex;
+    align-items: center;
+    & a {
+      padding-left: 10px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .Project {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .ProjectCard {
+    & img {
+      width: 100%;
+    }
+  }
+
+  .ProjectDetails {
+    width: 100%;
+    text-align: left;
+    justify-items: left;
+    & h3, nav, p {
+      justify-content: left;
+      // padding: 10px 0;
+    }
+
+    & p, nav {
+      padding: 10px 30px;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .Project {
+    margin: 200px;
+    box-shadow: $box-shadow;
+    & .ProjectDetails, & .ProjectCard {
+      padding: 100px 0;
+    }
+  }
+}
+
+@media (min-width: 1920px) {
+  .Project {
+    margin: 200px 300px;
+  }
+}
