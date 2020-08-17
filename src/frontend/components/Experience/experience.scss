@@ -1,0 +1,58 @@
+@import './../../static//scss/utils/variables';
+@import './../../static//scss/mixins/shadow';
+
+.Experience {
+  width: 320px;
+  height: 410px;
+  grid-template-columns: auto 1fr auto;
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+  transition: $transition-theme;
+  padding: 25px;
+  align-content: center;
+  align-items: center;
+  &__body {
+    grid-template-rows: auto auto;
+  }
+  &.light {
+    background-color: $soft-color;
+  }
+  &__image {
+    justify-self: center;
+    margin: 0;
+  }
+  &__image img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    object-position: center;
+  }
+  &__bars {
+    row-gap: 20px;
+  }
+  & .btn-link {
+    padding: 0;
+    & i {
+      font-size: $icon-size-md;
+      color: $gray-500;
+    }
+  }
+  & .btn-link i.fa-angle-left {
+    padding-right: 25px;
+  }
+  & .btn-link i.fa-angle-right {
+    padding-left: 25px;
+  }
+
+  &__details {
+    display: grid;
+    & h3 {
+      padding-bottom: 10px;
+    }
+    & ul {
+      padding: 0;
+      align-content: flex-start;
+      row-gap: 5px;
+    }
+  }
+}

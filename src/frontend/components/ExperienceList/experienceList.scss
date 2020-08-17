@@ -1,0 +1,24 @@
+.ExperienceList {
+  gap: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  justify-content: center;
+  justify-items: center;
+}
+
+@media (min-width: 768px) {
+  .ExperienceList {
+    padding: 0 25px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .ExperienceList {
+    padding: 0 100px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .ExperienceList {
+    padding: 0 250px;
+  }
+}
