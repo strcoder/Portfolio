@@ -4,6 +4,7 @@ import AboutMe from '../components/AboutMe/AboutMe';
 import Project from '../components/Project/Project';
 // import Experience from '../components/Experience/Experience';
 import ExperienceList from '../components/ExperienceList/ExperienceList';
+import Footer from '../components/Footer/Footer';
 
 const HomePage = () => {
   return (
@@ -12,7 +13,7 @@ const HomePage = () => {
       <AboutMe />
       <Project />
       <ExperienceList />
-      <h1>HomePage</h1>
+      <Footer />
     </>
   );
 };
