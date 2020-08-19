@@ -17,6 +17,9 @@
   &.light {
     background-color: $soft-color;
   }
+  &.dark {
+    background-color: darken($dark-background, 2%);
+  }
   &__image {
     justify-self: center;
     margin: 0;

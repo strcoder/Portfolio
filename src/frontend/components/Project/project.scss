@@ -3,9 +3,18 @@
 .Project {
   display: flex;
   flex-wrap: wrap;
-  margin: 200px 0;
+  // margin: 0px 30px;
+  padding: 0 25px;
+  padding-bottom: 25px;
   align-items: center;
+  box-shadow: $box-shadow;
   border-radius: $border-radius;
+  &.light {
+    background-color: $soft-color;
+  }
+  &.dark {
+    background-color: darken($dark-background, 2%);
+  }
   &.dark .btn-link {
     color: $soft-color;
   }
@@ -24,8 +33,9 @@
 }
 
 .ProjectDetails {
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
+  // display: grid;
   text-align: center;
   justify-items: center;
   justify-self: center;
@@ -59,6 +69,10 @@
       padding-left: 10px;
     }
   }
+  & .btn {
+    margin-left: 25px;
+    margin-bottom: 20px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -78,27 +92,21 @@
     justify-items: left;
     & h3, nav, p {
       justify-content: left;
-      // padding: 10px 0;
     }
 
     & p, nav {
       padding: 10px 30px;
+    }
+    & .btn {
+      justify-self: left;
     }
   }
 }
 
 @media (min-width: 1440px) {
   .Project {
-    margin: 200px;
-    box-shadow: $box-shadow;
     & .ProjectDetails, & .ProjectCard {
       padding: 100px 0;
     }
-  }
-}
-
-@media (min-width: 1920px) {
-  .Project {
-    margin: 200px 300px;
   }
 }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import { useStateValue } from '../../Context';
 import './experience.scss';
@@ -35,6 +36,7 @@ const Experience = () => {
             <li>Server Side Render</li>
             <li>Redux</li>
           </ul>
+          <Link to='/' className='btn'>Conocer Más</Link>
         </div>
       )}
       <button type='button' className='btn-link' onClick={() => setDetailsActive(!detailsActive)}>

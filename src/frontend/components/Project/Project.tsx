@@ -41,6 +41,7 @@ const Project = () => {
           <Link to='/' className='btn-link'>SASS</Link>
           <Link to='/' className='btn-link'>NodeJs</Link>
         </nav>
+        <Link to='/' className='btn'>Conocer Más</Link>
         <h3 className='ProjectDetails--title'>{'</Eduli>'}</h3>
       </div>
     </div>

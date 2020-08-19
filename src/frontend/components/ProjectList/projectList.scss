@@ -1,0 +1,22 @@
+.ProjectList {
+  padding: 150px 25px;
+  justify-items: center;
+  row-gap: 50px;
+  &__elements {
+    row-gap: 150px;
+  }
+}
+
+@media (min-width: 768px) {
+  .ProjectList {
+    justify-items: left;
+    padding: 150px 30px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .ProjectList {
+    padding: 150px 300px;
+  }
+}
+
