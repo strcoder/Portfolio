@@ -3,8 +3,14 @@
 
 .Footer {
   color: $soft-color;
-  @include shadow($primary-color);
-  background-color: $primary-color;
+  &.light {
+    @include shadow($primary-color);
+    background-color: $primary-color;
+  }
+  &.dark {
+    @include shadow($secondary-color);
+    background-color: $secondary-color;
+  }
   margin-top: 100px;
   padding-top: 25px;
   &__head {
@@ -25,8 +31,13 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    @include shadow($secondary-color);
-    background-color: $secondary-color;
+    &.light {
+      @include shadow($secondary-color);
+      background-color: $secondary-color;
+    }
+    &.dark {
+      background-color: darken($secondary-color, 2%);
+    }
     & h6 {
       padding: 0 25px;
     }

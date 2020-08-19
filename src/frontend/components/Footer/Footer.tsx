@@ -1,11 +1,13 @@
 import React from 'react';
+import { useStateValue } from '../../Context';
 import './footer.scss';
 
 const Image = require('../../static/assets/images/logo-min.png');
 
 const Footer = () => {
+  const { theme } = useStateValue();
   return (
-    <footer className='Footer'>
+    <footer className={`Footer ${theme}`}>
       <div className='Footer__head'>
         <figure className='Footer__head--image'>
           <img src={Image} alt='Logo' />
@@ -20,7 +22,7 @@ const Footer = () => {
           <button type='button' className='form--button btn-tertiary'>Enviar</button>
         </form>
       </div>
-      <div className='Footer__copyright'>
+      <div className={`Footer__copyright ${theme}`}>
         <h6>&copy; Copyright</h6>
         <h6>Diseñado por: </h6>
       </div>
