@@ -1,0 +1,59 @@
+@import './../../static/scss/utils/variables';
+
+.HeroMin {
+  height: 100px;
+  align-content: center;
+  color: $soft-color;
+  padding: 0 50px;
+  border-bottom-right-radius: 100px;
+  position: relative;
+  animation: heroEnter 1s;
+  z-index: -100;
+  transition: $transition-theme;
+  &.light {
+    background: $primary-color;
+    &::before {
+      background: $primary-color;
+    }
+    &::after {
+      background: $light-background;
+    }
+  }
+  &.dark {
+    background: $secondary-color;
+    &::before {
+      background: $secondary-color;
+    }
+    &::after {
+      background: $dark-background;
+    }
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    bottom: -100px;
+    transition: $transition-theme;
+  }
+  &::after {
+    content: '';
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: -100px;
+    border-top-left-radius: 100px;
+    transition: $transition-theme;
+  }
+}
+
+@keyframes heroEnter {
+  0% {
+    top: -300px;
+    opacity: 0;
+  }
+  100% {
+    top: 0px;
+    opacity: 1;
+  }
+}

@@ -39,9 +39,9 @@ const AppBar = () => {
           </button>
         </div>
         <nav className={`AppBar__body--nav ${theme}`}>
-          <Link to='/briefcase'>
+          <Link to='/portfolio'>
             <i className='fas fa-vial' />
-            <span>Briefcase</span>
+            <span>Portfolio</span>
           </Link>
           <Link to='/experience'>
             <i className='fas fa-chart-line' />
