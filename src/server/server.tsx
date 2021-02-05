@@ -42,7 +42,7 @@ if (ENV === 'development') {
   app.disable('x-powered-by');
 }
 
-app.use(express.json());
+// app.use(express.json());
 
 type preloadState = {
   theme: string
