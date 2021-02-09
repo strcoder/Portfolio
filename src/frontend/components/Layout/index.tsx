@@ -1,5 +1,5 @@
 import React from 'react';
-import AppBar from '../components/AppBar/AppBar';
+import AppBar from '../AppBar';
 
 type LayoutProps = {
   children: React.ReactElement,

@@ -1,7 +1,7 @@
 import React from 'react';
-import HeroMin from '../components/HeroMin/HeroMin';
+import HeroMin from '../../components/HeroMin/HeroMin';
 // import ProjectMin from '../components/ProjectMin/ProjectMin';
-import ProjectMinList from '../components/ProjectMinList/ProjectMinList';
+import ProjectMinList from '../../components/ProjectMinList/ProjectMinList';
 
 const Portfolio = () => {
   return (

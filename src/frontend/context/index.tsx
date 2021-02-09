@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import React, { createContext, useReducer, useContext, Dispatch } from 'react';
 import reducer from './reducers';
 

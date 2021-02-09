@@ -1,5 +1,5 @@
-@import './../../static/scss/utils/variables';
-@import './../../static/scss/mixins/shadow';
+@import './../../scss/utils/variables';
+@import './../../scss/mixins/shadow';
 
 .AppBar {
   background: $primary-color;
@@ -107,7 +107,7 @@
     position: relative;
     transition: $transition-theme;
     & .fas.fa-cloud, .fas.fa-star {
-      font-size: 5px;
+      font-size: $font-size-xs;
       padding-left: 2px;
       &:first-child {
         padding-bottom: 6px;
@@ -124,7 +124,7 @@
       color: $soft-color;
     }
     &.dark {
-      right: -28px;
+      right: -18px;
       color: $gray-400;
     }
   }
