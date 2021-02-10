@@ -1,0 +1,245 @@
+@import '../../scss/utils/variables';
+
+.example, .example-2 {
+  width: 100%;
+  // height: 500px;
+  padding-top: 250px;
+  padding-bottom: 100px;
+  // padding: 100px 0;
+  color: $white;
+  background-color: $primary-color;
+}
+
+.example-2 {
+  color: $primary-color;
+  background-color: $white;
+  position: relative;
+  bottom: 150px;
+  z-index: 9;
+}
+
+.Card--example {
+  max-width: 1000px;
+  justify-self: center;
+  grid-template-columns: repeat(2, 1fr);
+  &--image {
+    width: 400px;
+    height: 400px;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+}
+
+.Card__body {
+  align-items: center;
+  align-self: center;
+  gap: 15px;
+  & h4 {
+    font-size: 40px;
+  }
+  & .badge {
+    padding: 5px 8px;
+    border-radius: $border-radius;
+    background-color: $accent-color;
+    font-weight: bold;
+  }
+  & .flex {
+    align-items: center;
+    justify-content: space-between;
+    & .btn-outline-pink {
+      color: $white;
+    }
+  }
+}
+
+/////////////////////////////////////////////////
+
+.Skills {
+  gap: 25px;
+  justify-items: center;
+  & > .flex {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.Skill--item {
+  gap: 25px;
+  justify-items: center;
+  padding: 25px;
+  & figure {
+    width: 70px;
+    height: 70px;
+    align-items: center;
+    justify-content: center;
+    font-size: $font-size-xxl;
+    border-radius: $organic-radius;
+  }
+}
+
+.Skills__body {
+  padding: 25px;
+  border-radius: $border-radius;
+  // box-shadow: $box-shadow-sm;
+  // background-color: $white;
+  max-width: 1000px;
+  gap: 10px;
+  & h6 {
+    font-family: $font-family-aside;
+    font-size: $font-size-lg;
+    color: $neon;
+  }
+  & > .flex {
+    padding-top: 25px;
+    flex-wrap: wrap;
+    // justify-content: space-around;
+    align-items: flex-start;
+    & div {
+      padding: 0 20px;
+    }
+  }
+  & ul {
+    padding: 20px 0;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+    row-gap: 10px;
+    align-items: flex-start;
+  }
+  & ul li {
+    color: $gray-700;
+  }
+}
+
+@media screen and (min-width: 426px) {
+  .Skill--item  {
+    padding: 25px 50px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .Skills__body {
+    & > .flex {
+      justify-content: space-around;
+    }
+  }
+}
+
+///////////////////////////////////////////////////////////////
+
+.Projects {
+  padding: 50px 0;
+  justify-items: center;
+  gap: 50px;
+}
+
+.Projects__body {
+  padding: 0 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.ProjectCard {
+  // padding: 25px;
+  background-color: $white;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow-sm;
+  max-width: 335px;
+}
+
+.ProjectCard__header--image {
+  width: 100%;
+  height: 100%;
+  border-radius: $border-radius;
+  display: grid;
+  & img {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    width: 100%;
+    height: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: $border-radius;
+  }
+}
+
+.ProjectCard__header--back {
+  min-width: 280px;
+  height: 100%;
+  background-color: rgba($primary-color, 0.6);
+  grid-row-start: 1;
+  grid-column-start: 1;
+  z-index: 3;
+  border-top-left-radius: $border-radius;
+  border-top-right-radius: $border-radius;
+
+}
+
+.ProjectCard__image--front {
+  width: 100px;
+  height: 100px;
+  border-radius: $circle-radius;
+  box-shadow: $box-shadow-sm;
+  background: $white;
+  border: 1px solid rgba($gray-500, 0.5);
+  justify-self: center;
+  position: relative;
+  bottom: 50%;
+  z-index: 4;
+  padding: 5px;
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+}
+
+.ProjectCard__body {
+  position: relative;
+  bottom: 25px;
+  padding: 0 20px;
+  justify-items: center;
+  gap: 10px;
+  & h2 {
+    font-size: 2.5em;
+  }
+}
+
+.ProjectCard__body--links {
+  justify-self: stretch;
+  justify-content: space-between;
+}
+
+.ProjectCard__body--tags {
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  & span {
+    margin: 5px;
+  }
+}
+
+.ProjectCard__body--header {
+  justify-self: stretch;
+  justify-content: space-between;
+  align-items: center;
+  & span {
+    color: $neon;
+    font-weight: bold;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .ProjectCard {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ProjectCard__image--front {
+    bottom: 0;
+    align-self: center;
+    right: 50%;
+  }
+}

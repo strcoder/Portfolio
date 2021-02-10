@@ -41,6 +41,7 @@
     text-align: center;
     justify-items: center;
     padding-bottom: 100px;
+    gap: 10px;
   }
   &__helper.btn-link {
     grid-area: contain;
@@ -74,10 +75,10 @@
     font-size: $icon-size-sm;
     font-weight: normal;
   }
-  &.light a {
-    color: $primary-color;
-  }
-  &.dark a {
-    color: $soft-color;
-  }
+  // &.light a {
+  //   color: $primary-color;
+  // }
+  // &.dark a {
+  //   color: $soft-color;
+  // }
 }

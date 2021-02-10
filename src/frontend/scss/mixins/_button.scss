@@ -4,20 +4,23 @@
   @include shadow($background);
   @if (type-of($background) == 'color') {
     &:hover {
-      transform: translateY(-2px);
-      background: darken($background, 2%);
+      background-color: darken($background, 2%);
     }
   }
 }
 
-@mixin buttonOutline($color, $background) {
-  @include button($color, none);
-  border: 1px solid rgba($color, 0.3);
-  @include shadow($color);
+@mixin buttonPill($color: $soft-color, $background: $primary-color) {
+  @include button($color, $background);
+  border-radius: $border-radius-pill;
+}
+
+@mixin buttonOutline($color: $primary-color, $background: $soft-color) {
+  color: $color;
+  background: none;
+  border: 1px solid $color;
   &:hover {
-    transform: translateY(-2px);
     color: $background;
-    background: $color;
+    background-color: $color;
   }
 }
 
@@ -25,9 +28,6 @@
   color: $color;
   border: none;
   background: none;
-  &:hover {
-    transform: translateY(-2px);
-  }
 }
 
 @mixin buttonSocial($color) {
@@ -36,13 +36,12 @@
 
 @mixin buttonSocialLink($color) {
   @include buttonLink($color);
-  font-size: $icon-size-sm;
 }
 
 @mixin buttonSocialCircular($color, $background) {
   @include button($color, $background);
+  padding: 0;
   width: 40px;
   height: 40px;
   border-radius: $circle-radius;
-  padding: 0;
 }

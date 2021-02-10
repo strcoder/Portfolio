@@ -1,61 +1,98 @@
-body {
+* {
   margin: 0;
-  font-family: $font-family-base;
+  padding: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+body {
   transition: $transition-theme;
-  &.light {
-    color: $dark;
-    background: $light-background;
-  }
-  &.dark {
-    color: $soft-color;
-    background: $dark-background;
+  font-family: $font-family-base;
+  @each $name, $color in $theme-colors {
+    & .bg-#{$name} {
+      background-color: $color;
+    }
+    & .text-#{$name} {
+      color: $color;
+    }
+    & .tag-#{$name} {
+      background-color: $color;
+      color: $soft-color;
+      font-weight: bold;
+      padding: 5px 5px;
+      border-radius: $border-radius;
+      width: 90px;
+      justify-content: center;
+      // min-width: 40px;
+      font-size: $font-size-xs
+    }
+    & .btn-#{$name} {
+      @include button($soft-color, $color);
+    }
+    & .btn-link-#{$name} {
+      @include buttonLink($color);
+    }
+    & .btn-outline-#{$name} {
+      @include buttonOutline($color, $soft-color);
+    }
   }
 }
 
-a {
-  text-decoration: none;
-  color: $tertiary-color;
+body.light {
+  color: $dark-bg;
+  background: $light-bg;
 }
 
-.btn, .btn-primary, .btn-secondary, .btn-tertiary, .btn-link, .btn-link-soft, .form-icon-btn {
+body.dark {
+  color: $light-bg;
+  background: $dark-bg;
+}
+
+button, a {
   border: none;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: bold;
   padding: 10px 14px;
   text-align: center;
   align-self: center;
+  align-items: center;
   justify-self: center;
-  text-transform: capitalize;
+  justify-content: center;
+  // text-transform: capitalize;
   font-size: $font-size-base;
   font-family: $font-family-base;
   border-radius: $border-radius-lg;
-  transition: $transition-transform;
+  transition: $transition-base;
+  &:hover {
+    transform: translateY(-2px);
+  }
 }
 
-.btn, .btn-primary {
+.btn {
   @include button();
 }
 
-.btn-secondary {
-  @include button($soft-color, $secondary-color);
-}
-
-.btn-tertiary {
-  @include button($soft-color, $tertiary-color);
-}
-
-.btn-link {
+.btn-link, .light__btn-link {
   @include buttonLink();
 }
 
-.btn-link-soft {
-  @include buttonLink($soft-color);
+.btn-outline {
+  @include buttonOutline();
+}
+
+
+.box-shadow {
+  box-shadow: $box-shadow;
 }
 
 .form {
-  @include simpleForm();
+  @include formBasic();
 }
 
-.form-input-icon {
-  @include simpleInputIconForm($soft-color, $primary-color);
+.form-search {
+  @include formSearch();
+}
+
+body .btn-soft {
+  color: $dark-bg;
 }

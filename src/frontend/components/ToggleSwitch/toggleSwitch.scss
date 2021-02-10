@@ -1,0 +1,66 @@
+@import '../../scss/utils/variables';
+@import '../../scss/mixins/shadow';
+
+.ToggleSwitch {
+  width: 70px;
+  height: 28px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: $transition-theme;
+  &.light {
+    background: $tertiary-color;
+    @include shadow($tertiary-color);
+  }
+  &.dark {
+    background: $primary-color;
+    @include shadow($primary-color);
+  }
+  &__body {
+    width: 50%;
+    display: flex;
+    grid-area: content;
+    align-self: center;
+    position: relative;
+    transition: $transition-theme;
+    & .fas.fa-cloud, .fas.fa-star {
+      font-size: $font-size-xs;
+      padding-left: 2px;
+      &:first-child {
+        padding-bottom: 6px;
+      }
+      &:nth-child(2) {
+        padding-top: 10px;
+      }
+      &:last-child {
+        padding-top: 3px;
+      }
+    }
+    &.light {
+      left: -10px;
+      color: $soft-color;
+    }
+    &.dark {
+      left: 10px;
+      color: $gray-400;
+    }
+  }
+  & .fas.fa-circle, .fas.fa-moon {
+    top: -2px;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    grid-area: content;
+    border-radius: 100px;
+    font-size: $icon-size-sm;
+    transition: $transition-theme;
+  }
+  & .fas.fa-circle {
+    left: 5px;
+    color: $sun;
+  }
+  & .fas.fa-moon {
+    left: -28px;
+    color: $soft-color;
+  }
+}

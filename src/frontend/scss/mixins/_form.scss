@@ -1,0 +1,108 @@
+@mixin inputBasic {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  box-shadow: $box-shadow-sm;
+  border-radius: $border-radius;
+  font-family: $font-family-base;
+}
+
+@mixin formSearch {
+  & > .form-label {
+    display: grid;
+    row-gap: 10px;
+    align-items: center;
+    grid-template-columns: 1fr auto;
+    & .form-title {
+      grid-column-end: span 2;
+    }
+  }
+  & .form-input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  & .form-button {
+    box-shadow: none;
+    justify-self: left;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    flex-basis: 30px;
+  }
+}
+
+@mixin formBasic {
+  &-control {
+    padding: 20px 0;
+    gap: 20px;
+  }
+  &-description {
+    padding-bottom: 5px;
+    font-size: $font-size-md;
+  }
+  &-input,
+  &-textarea,
+  &-select {
+    @include inputBasic();
+  }
+  &-message {
+    font-weight: 100;
+    font-size: $font-size-sm;
+  }
+  &-button {
+    width: 100%;
+  }
+  &-textarea.no-resize {
+    resize: none;
+  }
+  &-input[type='date'] {
+    background: $white;
+    -webkit-appearance: none;
+  }
+  &-select {
+    background: $white;
+    -webkit-appearance: none;
+  }
+  &-select.background-none {
+    background: none;
+  }
+  &-cardExpire {
+    display: flex;
+    & select:first-child {
+      border-radius: 0;
+      border-top-left-radius: $border-radius;
+      border-bottom-left-radius: $border-radius;
+    }
+    & select:last-child {
+      border-radius: 0;
+      border-top-right-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    }
+  }
+  &-checkbox {
+    display: flex;
+    align-items: center;
+    & > small {
+      padding-left: 5px;
+    }
+  }
+}
+
+// @mixin formBasicDark {
+//   &-input,
+//   &-textarea,
+//   &-input[type='date'] {
+//     color: $soft-color;
+//     background: $gray-color;
+//   }
+//   &-input::placeholder,
+//   &-textarea::placeholder,
+//   &-input[type='date']::placeholder {
+//     color: $gray-300;
+//   }
+//   &-select.background-none {
+//     color: $soft-color;
+//   }
+//   &-select:active {
+//     background: $dark;
+//   }
+// }

@@ -1,35 +1,11 @@
-import axios from 'axios';
-
-const setStorage = (key: string, value: string) => {
-  axios({
-    url: `/${key}`,
-    method: 'post',
-    data: {
-      theme: value,
-    },
-  }).then((result) => {
-  }).catch((error) => {
-    console.log(error);
-  });
-};
-
-const reducer = (state: any, action: any) => {
-  switch (action.type) {
-    case 'LOGIN_REQUEST':
-    case 'REGISTER_REQUEST':
+const reducer = (state: any, payload: any) => {
+  switch (payload.type) {
     case 'SET_THEME':
-      setStorage('theme', action.theme);
       return {
         ...state,
-        theme: action.theme,
+        theme: payload.theme,
       };
-    case 'LOGOUT_REQUEST':
-      return {
-        ...state,
-        user: action.payload,
-      };
-    default:
-      return state;
+    default: return state;
   }
 };
 

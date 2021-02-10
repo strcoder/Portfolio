@@ -1,100 +1,60 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaBars, FaSearch, FaVial, FaChartLine, FaPaperPlane, FaTimes, FaCloud, FaStar, FaMoon, FaCircle } from 'react-icons/fa';
+import { FaVial, FaChartLine, FaPaperPlane, FaTimes } from 'react-icons/fa';
+import { HiMenuAlt1 } from 'react-icons/hi';
 import { useStateValue } from '../../context';
+import ToggleSwitch from '../ToggleSwitch';
 import './appBar.scss';
 
 const AppBar = () => {
-  const { theme, dispatch } = useStateValue();
+  const { theme } = useStateValue();
   const [menuActive, setMenuActive] = useState(false);
-  const [searchFocus, setSearchFocusActive] = useState(false);
-  const newTheme: string = theme === 'light' ? 'dark' : 'light';
 
   return (
     <header className={`AppBar ${theme}`}>
       <div className='AppBar__header'>
-        <img src='/images/logo-name.png' alt='Logo' />
+        <figure className='AppBar__header--logo'>
+          <img src='/images/logo-name.png' alt='Logo' />
+        </figure>
         <button
           type='button'
           className='btn-link-soft'
           onClick={() => setMenuActive(true)}
         >
-          <FaBars />
+          <HiMenuAlt1 size={30} />
         </button>
       </div>
 
-      <div className={`AppBar__body ${menuActive} ${theme}`}>
-        <div className='AppBar__body--search'>
-          <form className='form-control form-input-icon'>
-            <input
-              type='text'
-              placeholder='Search'
-              className={`form--input ${searchFocus}`}
-              onFocus={() => setSearchFocusActive(true)}
-              onBlur={() => setSearchFocusActive(false)}
-            />
-            <button type='button' className='form-icon-btn'>
-              <FaSearch />
-            </button>
-          </form>
-          <button
-            type='button'
-            className='btn-link-soft'
-            onClick={() => setMenuActive(false)}
-          >
-            <FaTimes />
+      {menuActive && (
+        <div className={`AppBar__body ${theme}`}>
+          <button type='button' className={`AppBar__body--close ${theme}`} onClick={() => setMenuActive(false)}>
+            <FaTimes size={20} />
           </button>
-        </div>
-        <nav className={`AppBar__body--nav ${theme}`}>
-          <Link to='/portfolio'>
-            <FaVial />
-            <span>Portfolio</span>
-          </Link>
-          <Link to='/experience'>
-            <FaChartLine />
-            <span>Experience</span>
-          </Link>
-          <Link to='/contact'>
-            <FaPaperPlane />
-            <span>Contact</span>
-          </Link>
-        </nav>
-        <div className={`AppBar__body--theme ${theme}`}>
-          <p>Theme</p>
-          <div>
-            <button
-              type='button'
-              className={`ToggleSwitch ${theme}`}
-              onClick={() => dispatch({ type: 'SET_THEME', theme: newTheme })}
-            >
-              <small className={`ToggleSwitch__body ${theme}`}>
-                {theme === 'light' && (
-                  <>
-                    <i className='fas fa-cloud'><FaCloud /></i>
-                    <i className='fas fa-cloud'><FaCloud /></i>
-                    <i className='fas fa-cloud'><FaCloud /></i>
-                  </>
-                )}
-                {theme === 'dark' && (
-                  <>
-                    <i className='fas fa-star'><FaStar /></i>
-                    <i className='fas fa-star'><FaStar /></i>
-                    <i className='fas fa-star'><FaStar /></i>
-                  </>
-                )}
-              </small>
-              <i className={`fas fa-${theme === 'light' ? 'circle' : 'moon'}`}>
-                {theme === 'light' && (
-                  <FaCircle />
-                )}
-                {theme === 'dark' && (
-                  <FaMoon />
-                )}
-              </i>
-            </button>
+          <nav className={`AppBar__body--nav ${theme}`}>
+            <Link to='/portfolio'>
+              <FaVial />
+              <span>Portfolio</span>
+            </Link>
+            <Link to='/experience'>
+              <FaChartLine />
+              <span>Experience</span>
+            </Link>
+            <Link to='/contact'>
+              <FaPaperPlane />
+              <span>Contact</span>
+            </Link>
+          </nav>
+          <div className={`AppBar__body--theme ${theme}`}>
+            <p>Theme</p>
+            <div>
+              <ToggleSwitch />
+            </div>
+          </div>
+          <div className={`AppBar__body--fans ${theme}`}>
+            <button type='button' className='btn-accent'>Buy me a coffee</button>
           </div>
         </div>
-      </div>
+      )}
     </header>
   );
 };

@@ -1,22 +1,12 @@
-import React, { createContext, useReducer, useContext, Dispatch } from 'react';
+/* eslint-disable no-unused-vars */
+import React, { createContext, useReducer, useContext } from 'react';
+import { ContextProps, ProviderProps } from '../models/Context';
 import reducer from './reducers';
 
-type ProviderProps = {
-  children: React.ReactElement,
-  initialState: Object,
-}
-
-type actions = {
-  type: string,
-  theme: string
-}
-
-type ContextProps = {
-  theme: string,
-  dispatch: Dispatch<actions>,
-}
-
-export const Context = createContext<ContextProps>({ theme: '', dispatch: () => {} });
+export const Context = createContext<ContextProps>({
+  theme: '',
+  dispatch: () => {},
+});
 
 export const Provider = ({ children, initialState = {} }: ProviderProps) => {
   const [state, dispatch] = useReducer(reducer, initialState);

@@ -7,7 +7,7 @@ import {
   FaLinkedinIn,
   FaTwitch,
   FaTwitter,
-  FaYoutube,
+  FaCircleNotch,
 } from 'react-icons/fa';
 import { useStateValue } from '../../context';
 import './hero.scss';
@@ -28,33 +28,26 @@ const Hero = () => {
         <h1>I&apos;m Web Developer</h1>
         <ul className='Hero__body--details'>
           <li>ReactJS</li>
-          <li>
-            <i className='fas fa-circle-notch' />
-          </li>
+          <li><FaCircleNotch size={10} /></li>
           <li>Typescript</li>
-          <li>
-            <i className='fas fa-circle-notch' />
-          </li>
+          <li><FaCircleNotch size={10} /></li>
           <li>NodeJS</li>
         </ul>
         <nav className={`Hero__body--links ${theme}`}>
-          <Link to='/' className='btn-link'>
+          <Link to='/' className='btn-link-facebook'>
             <FaFacebookF />
           </Link>
-          <Link to='/' className='btn-link'>
+          <Link to='/' className='btn-link-twitter'>
             <FaTwitter />
           </Link>
-          <Link to='/' className='btn-link'>
+          <Link to='/' className='btn-link-instagram'>
             <FaInstagram />
           </Link>
-          <Link to='/' className='btn-link'>
+          <Link to='/' className='btn-link-linkedin'>
             <FaLinkedinIn />
           </Link>
-          <Link to='/' className='btn-link'>
+          <Link to='/' className='btn-link-twitch'>
             <FaTwitch />
-          </Link>
-          <Link to='/' className='btn-link'>
-            <FaYoutube />
           </Link>
         </nav>
       </div>
