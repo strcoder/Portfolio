@@ -96,17 +96,13 @@
   & > .flex {
     padding-top: 25px;
     flex-wrap: wrap;
-    // justify-content: space-around;
     align-items: flex-start;
-    & div {
-      padding: 0 20px;
-    }
   }
   & ul {
     padding: 20px 0;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 20px;
-    row-gap: 10px;
+    row-gap: 15px;
     align-items: flex-start;
   }
   & ul li {
@@ -123,7 +119,7 @@
 @media screen and (min-width: 768px) {
   .Skills__body {
     & > .flex {
-      justify-content: space-around;
+      justify-content: space-between;
     }
   }
 }
@@ -138,7 +134,8 @@
 
 .Projects__body {
   padding: 0 20px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 80px;
+  // grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .ProjectCard {
@@ -169,13 +166,21 @@
 .ProjectCard__header--back {
   min-width: 280px;
   height: 100%;
-  background-color: rgba($primary-color, 0.6);
   grid-row-start: 1;
   grid-column-start: 1;
   z-index: 3;
+  background-color: rgba($black, 0.6);
   border-top-left-radius: $border-radius;
   border-top-right-radius: $border-radius;
-
+  &.primary {
+    background-color: rgba($primary-color, 0.6);
+  }
+  &.danger {
+    background-color: rgba($danger-color, 0.6);
+  }
+  &.twitch {
+    background-color: rgba($twitch, 0.6);
+  }
 }
 
 .ProjectCard__image--front {
@@ -189,12 +194,13 @@
   position: relative;
   bottom: 50%;
   z-index: 4;
-  padding: 5px;
+  // padding: 5px;
   & img {
     width: 100%;
     height: 100%;
     object-fit: contain;
     object-position: center;
+    border-radius: $circle-radius;
   }
 }
 
@@ -234,12 +240,258 @@
 
 @media screen and (min-width: 768px) {
   .ProjectCard {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 280px 1fr;
+    max-width: 1000px;
   }
 
   .ProjectCard__image--front {
     bottom: 0;
     align-self: center;
     right: 50%;
+    grid-row-start: 1;
+    grid-column-start: 2;
+  }
+
+  .ProjectCard__body {
+    grid-row-start: 1;
+    grid-column-start: 2;
+    position: initial;
+    padding: 25px 60px;
+    gap: 20px;
+    // grid-template-columns: repeat(3, 1fr);
+  }
+
+  .ProjectCard__header--image img {
+    max-height: 260px;
+  }
+
+  .ProjectCard__header--back {
+    border-radius: none;
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+  }
+
+  .ProjectCard__body--tags {
+    justify-self: flex-end;
+  }
+
+  .ProjectCard__body--links {
+    justify-content: flex-end;
+  }
+}
+
+.MoreAboutMe {
+  padding: 50px 25px;
+  gap: 25px;
+  & h2 {
+    text-align: center;
+  }
+}
+
+.MoreAboutMe--twitch {
+  row-gap: 5px;
+  // width: 265px;
+  width: 100%;
+  display: grid;
+  column-gap: 20px;
+  text-align: left;
+  justify-items: flex-start;
+  & i {
+    display: grid;
+    grid-row-end: span 2;
+  }
+  & span {
+    grid-column-start: 2;
+  }
+  & span:nth-child(2) {
+    font-size: $font-size-lg;
+  }
+  & span:nth-child(3) {
+    font-size: $font-size-sm;
+    font-weight: 500;
+  }
+}
+
+.MoreAboutMe--ibm, .MoreAboutMe--platzi {
+  width: 100%;
+  & span {
+    padding-left: 10px;
+  }
+}
+
+.MoreAboutMe--item {
+  gap: 25px;
+  transition: $transition-base;
+}
+
+// .MoreAboutMe--lastP {
+//   grid-column-end: span 2;
+// }
+
+.MoreAboutMe--links {
+  justify-content: space-between;
+  & a {
+    border-radius: $circle-radius;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.MoreAboutMe--form button {
+  width: 100%;
+}
+
+.MoreAboutMe--emoji {
+  width: 100%;
+  height: 100%;
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .MoreAboutMe {
+    max-width: 1000px;
+    justify-self: center;
+    gap: 80px;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    & h2 {
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      background-color: $white;
+      border-radius: $border-radius;
+      color: $pink;
+    }
+  }
+
+  .MoreAboutMe--form {
+    display: grid;
+    // grid-column-end: span 2;
+    // grid-template-columns: repeat(2, 1fr);
+    // padding: 0 100px;
+    & label:nth-child(3) {
+      // grid-column-end: span 2;
+    }
+    & button {
+      // grid-column-end: span 2;
+    }
+  }
+
+  .MoreAboutMe--item {
+    background-color: $white;
+    // padding: 25px;
+    // width: 400px;
+    border-radius: $border-radius;
+    height: max-content;
+    & p {
+      padding: 25px;
+      padding-bottom: 0;
+      grid-column-start: 1;
+      grid-row-start: 1;
+    }
+    & a {
+      grid-column-start: 1;
+      grid-row-start: 2;
+      border: none;
+      // align-self: flex-start;
+    }
+    // &:nth-child(2) {
+    //   max-height: 248px;
+    // }
+    // &:nth-child(3) {
+    //   max-height: 309px;
+    //   // margin: 50px 0;
+    // }
+    // &:nth-child(4) {
+    //   max-height: 223px;
+    // }
+    // &:nth-child(2)::after {
+    //   content: '';
+    //   width: 150px;
+    //   height: 150px;
+    //   z-index: 100;
+    //   position: relative;
+    //   grid-row-start: 1;
+    //   grid-column-start: 1;
+    //   right: 80px;
+    //   top: 0;
+    //   right: -640px;
+    //   border-radius: $organic-radius;
+    //   background-color: $twitch;
+    // }
+    // &:nth-child(2)::before {
+    //   content: '';
+    //   width: 150px;
+    //   height: 150px;
+    //   z-index: 100;
+    //   position: relative;
+    //   grid-row-start: 2;
+    //   grid-column-start: 1;
+    //   right: -420px;
+    //   bottom: 50px;
+    //   border-radius: $organic-radius;
+    //   background-color: $twitch;
+    // }
+    // &:nth-child(3) {
+    //   justify-self: flex-end;
+    // }
+    // &:nth-child(3)::after {
+    //   content: '';
+    //   width: 150px;
+    //   height: 150px;
+    //   z-index: 100;
+    //   position: relative;
+    //   grid-row-start: 1;
+    //   grid-column-start: 1;
+    //   top: 0;
+    //   left: -400px;
+    //   border-radius: $organic-radius;
+    //   background-color: $ibm;
+    // }
+    // &:nth-child(3)::before {
+    //   content: '';
+    //   width: 150px;
+    //   height: 150px;
+    //   z-index: 100;
+    //   position: relative;
+    //   grid-row-start: 2;
+    //   grid-column-start: 1;
+    //   left: -127px;
+    //   bottom: 90px;
+    //   border-radius: $organic-radius;
+    //   background-color: $ibm;
+    // }
+    // &:nth-child(4)::after {
+    //   content: '';
+    //   width: 150px;
+    //   height: 150px;
+    //   z-index: 100;
+    //   position: relative;
+    //   grid-row-start: 1;
+    //   grid-column-start: 1;
+    //   right: 80px;
+    //   top: 0;
+    //   right: -640px;
+    //   border-radius: $organic-radius;
+    //   background-color: $platzi;
+    // }
+    // &:nth-child(4)::before {
+    //   content: '';
+    //   width: 150px;
+    //   height: 150px;
+    //   z-index: 100;
+    //   position: relative;
+    //   grid-row-start: 2;
+    //   grid-column-start: 1;
+    //   right: -370px;
+    //   bottom: 100px;
+    //   border-radius: $organic-radius;
+    //   background-color: $platzi;
+    // }
   }
 }
