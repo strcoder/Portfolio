@@ -7,7 +7,7 @@ import './aboutMe.scss';
 const AboutMe = () => {
   const { theme } = useStateValue();
   return (
-    <section className='AboutMe'>
+    <section id='AboutMe' className={`AboutMe ${theme}`}>
       <h2>{'<About Me>'}</h2>
       <figure className='AboutMe__emoji'>
         <img src='/images/emoji.png' alt='Emoji' />
@@ -37,7 +37,7 @@ const AboutMe = () => {
         </p>
         <p className='AboutMe__footer--contact'>
           If you’d like to chat
-          <Link to='/' className='btn-link'>
+          <Link to='/' className={`${theme === 'light' ? 'btn-link' : 'btn-link-soft'}`}>
             contact me.
           </Link>
         </p>

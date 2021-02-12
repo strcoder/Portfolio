@@ -11,13 +11,13 @@
 
 .AppBar__header {
   display: flex;
-  // padding: 0 25px;
   align-items: center;
   justify-content: space-between;
 }
 
 .AppBar__header--logo {
   width: 100px;
+  padding: 0;
   & img {
     width: 100%;
     height: 100%;
@@ -27,7 +27,6 @@
 }
 
 .AppBar__body {
-  // display: none;
   top: 0;
   left: 0;
   z-index: 10;
@@ -44,6 +43,9 @@
   &.dark {
     background: rgba($black, 0.9);
   }
+  &.false {
+    display: none;
+  }
 }
 
 .AppBar__body--close {
@@ -51,7 +53,6 @@
   justify-self: flex-end;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  // justify-content: flex-end;
   &.light {
     background-color: $white;
   }
@@ -108,181 +109,88 @@
   }
 }
 
-// .AppBar__body {
-//   &--search {
-//     display: flex;
-//     align-content: center;
-//     align-items: center;
-//     justify-content: space-between;
-//     & > button {
-//       padding-left: 0;
-//       padding: 22px 40px;
-//       justify-self: right;
-//     }
-//     & .form-control {
-//       opacity: 0;
-//       padding-left: 20px;
-//     }
-//     & .form--input {
-//       width: 40vw;
-//       color: $white;
-//       background: none;
-//       transition: $transition-base;
-//     }
-//     & .form--input::placeholder {
-//       color: $soft-color;
-//     }
-//     & .form--input.true::placeholder {
-//       color: $primary-color;
-//     }
+@media screen and (min-width: 768px) {
+  .AppBar__header {
+    & button {
+      display: none;
+    }
+  }
+  .AppBar__body {
+    width: initial;
+    height: initial;
+    position: initial;
+    grid-row-start: 1;
+    grid-column-start: 2;
+    align-content: center;
+    justify-content: flex-end;
+    display: flex;
+    & .AppBar__body--close {
+      display: none;
+    }
+    &.light {
+      background: none;
+    }
+    &.dark {
+      background: none;
+    }
+    &.false {
+      display: flex;
+    }
+  }
 
-//     & .form--input.true {
-//       color: $primary-color;
-//       background-color: $soft-color;
-//     }
-//   }
+  .AppBar__body--nav {
+    width: initial;
+    border-top-left-radius: 0;
+    & a {
+      color: $white;
+      & span {
+        padding-left: 5px;
+      }
+    }
+    &.light {
+      background: none;
+    }
+    &.dark {
+      background: none;
+    }
+  }
 
-//   &.false {
-//     display: none;
-//   }
-// }
+  .AppBar__body--theme {
+    width: initial;
+    & > p {
+      display: none;
+    }
+    &.light {
+      background: none;
+    }
+    &.dark {
+      color: $soft-color;
+      background: none;
+    }
+  }
 
-// .AppBar__body--theme {
-//   &.light {
-//     background: $light-bg;
-//   }
-//   &.dark {
-//     background: $dark-bg;
-//   }
-//   height: 100px;
-//   margin: 0px 25px;
-//   padding-top: 25px;
-//   text-align: center;
-//   justify-content: center;
-//   grid-template-rows: auto 1fr;
-//   border-bottom-left-radius: $border-radius;
-//   border-bottom-right-radius: $border-radius;
-//   transition: $transition-theme;
-//   & p {
-//     padding-bottom: 10px;
-//   }
-//   & .ToggleSwitch {
-//     align-self: start;
-//   }
-// }
+  .AppBar__body--fans {
+    width: initial;
+    & button {
+      width: 100%;
+    }
+    &.light {
+      background: none;
+    }
+    &.dark {
+      background: none;
+    }
+  }
+}
 
-// .AppBar__body--fans button {
-//   width: 150px;
-// }
+@media screen and (min-width: 1024px) {
+  .AppBar__header {
+    justify-content: center;
+  }
+}
 
-// @media (min-width: 768px) {
-//   .AppBar {
-//     display: flex;
-//   }
-//   .AppBar__header {
-//     & button {
-//       display: none;
-//     }
-//   }
-
-//   .AppBar__body {
-//     position: initial;
-//     width: 100%;
-//     align-items: center;
-//     justify-content: space-between;
-//     &.true {
-//       display: flex;
-//     }
-//     &.false {
-//       display: flex;
-//     }
-//     &--search {
-//       & .form--input {
-//         width: 15vw;
-//       }
-//       & > button {
-//         display: none;
-//       }
-//     }
-//   }
-
-//   .AppBar__body--nav {
-//     color: $soft-color;
-//     width: 100%;
-//     justify-content: space-evenly;
-//     & > a {
-//       color: $soft-color;
-//       padding: 0 7.5px;
-//     }
-//     & > a span {
-//       padding-left: 10px;
-//     }
-//   }
-
-//   .AppBar__body--theme {
-//     padding-top: 0;
-//     align-items: center;
-//     grid-template-rows: 1fr;
-//     height: auto;
-//     &.light {
-//       background: none;
-//     }
-//     &.dark {
-//       background: none;
-//     }
-//     & > p {
-//       display: none;
-//       padding: 0;
-//     }
-//   }
-// }
-
-// @media (max-width: 768px) {
-//   .AppBar__body {
-//     &.true {
-//       top: 0;
-//       z-index: 10;
-//       width: 100vw;
-//       height: 100vh;
-//       position: fixed;
-//       transition: $transition-theme;
-//       grid-template-rows: auto auto 1fr;
-//       &.light {
-//         background: rgba($dark-bg, 0.9);
-//       }
-//       &.dark {
-//         background: rgba($black, 0.9);
-//       }
-//       & nav.light {
-//         background: $light-bg;
-//         border-bottom: 1px solid $gray-400;
-//       }
-//       & nav.dark {
-//         background: $dark-bg;
-//         border-bottom: 1px solid $black;
-//       }
-//       & nav.dark a {
-//         color: $soft-color;
-//       }
-//       & nav {
-//         padding: 25px;
-//         margin: 50px 25px;
-//         margin-bottom: 0;
-//         justify-content: center;
-//         font-size: $font-size-xs;
-//         transition: $transition-theme;
-//         border-top-left-radius: $border-radius;
-//         border-top-right-radius: $border-radius;
-//         & a {
-//           padding: 0 10px;
-//           text-align: center;
-//           flex-direction: column;
-//         }
-//       }
-//       & nav i {
-//         padding-bottom: 10px;
-//         font-size: $icon-size-sm;
-//       }
-//     }
-//   }
-// }
+@media screen and (min-width: 1440px) {
+  .AppBar__body {
+    justify-content: center;
+  }
+}

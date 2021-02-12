@@ -1,28 +1,59 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaFacebookF, FaGithub, FaInstagram, FaLink, FaLinkedinIn, FaNodeJs, FaReact, FaSass, FaTwitch, FaTwitter, FaUser } from 'react-icons/fa';
+import { FaFacebookF, FaGithub, FaInstagram, FaLink, FaLinkedinIn, FaNodeJs, FaReact, FaSass, FaTwitch, FaTwitter, FaUser, FaHome, FaGamepad, FaPaperPlane, FaChartLine, FaVial, FaTeamspeak } from 'react-icons/fa';
 import { SiIbm, SiMongodb, SiPlatzi } from 'react-icons/si';
 import Hero from '../../components/Hero';
 import AboutMe from '../../components/AboutMe';
-// import ExperienceList from '../components/ExperienceList/ExperienceList';
-import Footer from '../../components/Footer';
-// import ProjectList from '../components/ProjectList/ProjectList';
+import { useStateValue } from '../../context';
 import './home.scss';
 
-const ProjectCard = ({ logo, title, headerImage, bgColor }: { logo: string, title: string, headerImage: string, bgColor: string }) => {
+const PageNav = () => {
+  const { theme } = useStateValue();
   return (
-    <div className='ProjectCard'>
+    <aside className={`PageNav ${theme}`}>
+      <Link to='/' className='btn-outline-neon' onClick={() => window.scroll(0, 0)}>
+        <FaHome size={25} />
+        <span>Home</span>
+      </Link>
+      <a href='#AboutMe' className='btn-outline-neon single-line'>
+        <FaTeamspeak size={25} />
+        <span>About me</span>
+      </a>
+      <a href='#Skills' className='btn-outline-neon'>
+        <FaChartLine size={25} />
+        <span>Skills</span>
+      </a>
+      <a href='#Projects' className='btn-outline-neon'>
+        <FaVial size={25} />
+        <span>Projects</span>
+      </a>
+      <a href='#More' className='btn-outline-neon'>
+        <FaGamepad size={25} />
+        <span>More</span>
+      </a>
+      <a href='#Contact' className='btn-outline-neon'>
+        <FaPaperPlane size={25} />
+        <span>Contact</span>
+      </a>
+    </aside>
+  );
+};
+
+const ProjectCard = ({ logo, title, headerImage, bgColor }: { logo: string, title: string, headerImage: string, bgColor: string }) => {
+  const { theme } = useStateValue();
+  return (
+    <div className={`ProjectCard ${theme}`}>
       <figure className='ProjectCard__header--image'>
         <div className={`ProjectCard__header--back ${bgColor}`} />
         <img src={headerImage} alt='' className='cover' />
       </figure>
-      <figure className='ProjectCard__image--front'>
+      <figure className={`ProjectCard__image--front ${theme}`}>
         <img src={logo} alt='profileImage' className='contain' />
       </figure>
       <div className='ProjectCard__body'>
         <div className='ProjectCard__body--header flex'>
           <h2 className='ProjectCard__body--title'>{title}</h2>
-          <span>01/01/2021</span>
+          <span className={`${theme === 'light' ? 'text-neon' : 'text-soft'}`}>01/01/2021</span>
         </div>
         <p className='ProjectCard__body--description'>
           Some quick example text to build on the card title and make up the
@@ -35,15 +66,18 @@ const ProjectCard = ({ logo, title, headerImage, bgColor }: { logo: string, titl
           <span className='tag-node'>NodeJS</span>
         </div>
         <div className='ProjectCard__body--links flex'>
-          <Link to='/' target='_blank' className='socialmedia-icon icon-facebook'>
+          <Link to='/' target='_blank' className={`${theme === 'light' ? 'btn-link-github' : 'btn-link-soft'}`}>
             <FaGithub size={20} />
           </Link>
-          <Link to='/' target='_blank' className='socialmedia-icon icon-twitter'>
+          <Link to='/' target='_blank' className={`${theme === 'light' ? 'btn-link' : 'btn-link-soft'}`}>
             <FaLink size={20} />
           </Link>
-          <button type='button' className='btn-outline'>
+          <Link
+            to='/project'
+            className={`${theme === 'light' ? 'btn-outline' : 'btn-outline-soft'}`}
+          >
             Conocer más
-          </button>
+          </Link>
           {/* <Link to='/' target='_blank' className='socialmedia-icon icon-slack'>
             <i className='fab fa-slack-hash' />
           </Link>
@@ -59,9 +93,10 @@ const ProjectCard = ({ logo, title, headerImage, bgColor }: { logo: string, titl
 const HomePage = () => {
   return (
     <>
+      <PageNav />
       <Hero />
       <AboutMe />
-      <section className='Skills'>
+      <section className='Skills' id='Skills'>
         <h2>Skils</h2>
         <div className='flex'>
           <div className='Skill--item'>
@@ -121,7 +156,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section className='Projects'>
+      <section className='Projects' id='Projects'>
         <h2>Projects</h2>
         <div className='Projects__body'>
           <ProjectCard
@@ -144,9 +179,9 @@ const HomePage = () => {
           />
         </div>
       </section>
-      <section className='MoreAboutMe'>
+      <section className='MoreAboutMe' id='More'>
         <h2>Que bueno que sigues aqui, te cuento mas de mi ...</h2>
-        <div className='MoreAboutMe--item'>
+        <div className='MoreAboutMe--item twitch'>
           <p>Soy una persona agradable que le gusta compartir el conocimiento. Actualmente tengo un canal de twitch en el cual junto a mis amigos estamos creando comunidad para apoyar y solucionar retos en el ambito tech. Tambiem me gusta jugar videjuegos y algun dia me gustaria aprender a desarrollarlos</p>
           <Link to='/twitch' className='MoreAboutMe--twitch btn-twitch'>
             <i><FaTwitch size={40} /></i>
@@ -154,20 +189,22 @@ const HomePage = () => {
             <span>Se una más de la counidad</span>
           </Link>
         </div>
-        <div className='MoreAboutMe--item'>
+        <div className='MoreAboutMe--item ibm'>
           <p>En los ultimos meses me he apasionado con un proyecto que puede lograr un cambio en mi comunidad en el ambito educativo, empezo como un pequeño proyecto escolar con unos compañeros el cual ha ido escalando y mejorando y me ha ayudado a ir mejorando mis habilidades tecnicas y personales. Gracias a este proyecto fue que participe en el reto IBM, ahi desempeñe el rol de lider y junto a mis compañeros logramos quedar dentro de los primeros 5 lugares</p>
           <Link to='/ibm' className='MoreAboutMe--ibm btn-ibm'>
             <SiIbm size={30} />
             <span>Ver página del reto</span>
           </Link>
         </div>
-        <div className='MoreAboutMe--item'>
+        <div className='MoreAboutMe--item platzi'>
           <p>Actualmente me encuentro desarrollando mi carrera ingenieria en computación en la UAM-C, y lo complemento estudiando de manera autodidacta y a la vez con cursos en linea dentro de la plataforma educativa plazi la cual me ha fomentado la idea de nunca parar de aprender y seguir creciendo como persona</p>
           <Link to='/platzi' className='MoreAboutMe--platzi btn-platzi'>
             <SiPlatzi size={20} />
             <span>Perfil de platzi</span>
           </Link>
         </div>
+      </section>
+      <section className='Contact' id='Contact'>
         <p className='MoreAboutMe--lastP'>Por ultimo si quieres sabes más de mi o trabajar conmigo puedes contactarme con el siguiente formulario o en mis redes sociales</p>
         <nav className='MoreAboutMe--links'>
           <Link to='/' className='btn-facebook'>
@@ -205,7 +242,6 @@ const HomePage = () => {
           <img src='/images/emoji2.png' alt='' />
         </figure>
       </section>
-      <Footer />
       {/* <ProjectList />
       <ExperienceList /> */}
     </>

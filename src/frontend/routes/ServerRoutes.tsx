@@ -1,14 +1,20 @@
 import React from 'react';
 import { renderRoutes } from 'react-router-config';
 import Layout from '../components/Layout';
-import HomePage from '../pages/Home';
+import Home from '../pages/Home';
+import Project from '../pages/Project';
 
 const serverRoutes = () => {
   return [
     {
       path: '/',
       exact: true,
-      component: HomePage,
+      component: Home,
+    },
+    {
+      path: '/project',
+      exact: true,
+      component: Project,
     },
   ];
 };

@@ -51,9 +51,9 @@ const Hero = () => {
           </Link>
         </nav>
       </div>
-      <button type='button' className={`Hero__helper btn-link ${theme}`}>
+      <a href='#AboutMe' className={`Hero__helper btn-link ${theme}`}>
         <FaAngleDoubleDown size={30} />
-      </button>
+      </a>
     </section>
   );
 };

@@ -1,8 +1,9 @@
 import React from 'react';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import { useStateValue } from '../context';
 import Layout from '../components/Layout';
 import HomePage from '../pages/Home';
-import { useStateValue } from '../context';
+import Project from '../pages/Project';
 // import Portfolio from '../pages/Portfolio';
 
 const App = () => {
@@ -17,7 +18,7 @@ const App = () => {
       <Layout>
         <Switch>
           <Route exact path='/' component={HomePage} />
-          {/* <Route exact path='/portfolio' component={Portfolio} /> */}
+          <Route exact path='/project' component={Project} />
         </Switch>
       </Layout>
     </BrowserRouter>

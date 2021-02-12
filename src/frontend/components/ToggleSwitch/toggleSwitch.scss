@@ -8,6 +8,7 @@
   cursor: pointer;
   border-radius: 50px;
   transition: $transition-theme;
+  z-index: 200;
   &.light {
     background: $tertiary-color;
     @include shadow($tertiary-color);

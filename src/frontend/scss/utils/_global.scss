@@ -5,6 +5,10 @@
   -moz-box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   transition: $transition-theme;
   font-family: $font-family-base;
@@ -46,6 +50,18 @@ body.light {
 body.dark {
   color: $light-bg;
   background: $dark-bg;
+  & .form-input {
+    background-color: #3b3d40;
+    &::placeholder {
+      color: $gray-200;
+    }
+  }
+  & .form-textarea {
+    background-color: #3b3d40;
+    &::placeholder {
+      color: $gray-200;
+    }
+  }
 }
 
 button, a {
@@ -95,4 +111,11 @@ button, a {
 
 body .btn-soft {
   color: $dark-bg;
+}
+
+.btn-disable {
+  cursor: default;
+  &:hover {
+    transform: none;
+  }
 }
