@@ -119,3 +119,8 @@ body .btn-soft {
     transform: none;
   }
 }
+
+body .btn-outline-white:hover,
+body .btn-outline-soft:hover {
+  color: $black;
+}

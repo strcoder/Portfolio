@@ -1,0 +1,70 @@
+@import '../../scss/utils/variables';
+
+.Skills {
+  gap: 25px;
+  justify-items: center;
+  background-color: $primary-color;
+  color: $soft-color;
+  padding-top: 50px;
+  & > .flex {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.Skill--item {
+  gap: 25px;
+  justify-items: center;
+  padding: 25px;
+  & figure {
+    width: 70px;
+    height: 70px;
+    align-items: center;
+    justify-content: center;
+    font-size: $font-size-xxl;
+    border-radius: $organic-radius;
+  }
+}
+
+.Skills__body {
+  padding: 25px;
+  border-radius: $border-radius;
+  // box-shadow: $box-shadow-sm;
+  // background-color: $white;
+  max-width: 1000px;
+  gap: 10px;
+  & h6 {
+    font-family: $font-family-aside;
+    font-size: $font-size-lg;
+    color: $white;
+  }
+  & > .flex {
+    padding-top: 25px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  & ul {
+    padding: 20px 0;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+    row-gap: 15px;
+    align-items: flex-start;
+  }
+  & ul li {
+    color: $gray-500;
+  }
+}
+
+@media screen and (min-width: 426px) {
+  .Skill--item  {
+    padding: 25px 50px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .Skills__body {
+    & > .flex {
+      justify-content: space-between;
+    }
+  }
+}

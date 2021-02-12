@@ -1,0 +1,15 @@
+@import '../../scss/utils/variables';
+
+.Contact {
+  padding: 50px 25px;
+  max-width: 1000px;
+  justify-self: center;
+  gap: 25px;
+}
+
+@media screen and (min-width: 768px) {
+  .Contact {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+  }
+}

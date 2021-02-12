@@ -1,0 +1,153 @@
+@import '../../scss/utils/variables';
+
+.ProjectCard {
+  // padding: 25px;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow-sm;
+  max-width: 335px;
+  &.light {
+    background-color: $white;
+  }
+  &.dark {
+    background-color: $black;
+  }
+}
+
+.ProjectCard__header--image {
+  width: 100%;
+  height: 100%;
+  border-radius: $border-radius;
+  display: grid;
+  & img {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    width: 100%;
+    height: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: $border-radius;
+  }
+}
+
+.ProjectCard__header--back {
+  min-width: 280px;
+  height: 100%;
+  grid-row-start: 1;
+  grid-column-start: 1;
+  z-index: 3;
+  background-color: rgba($black, 0.6);
+  border-top-left-radius: $border-radius;
+  border-top-right-radius: $border-radius;
+  &.primary {
+    background-color: rgba($primary-color, 0.6);
+  }
+  &.danger {
+    background-color: rgba($danger-color, 0.6);
+  }
+  &.twitch {
+    background-color: rgba($twitch, 0.6);
+  }
+}
+
+.ProjectCard__image--front {
+  width: 100px;
+  height: 100px;
+  border-radius: $circle-radius;
+  box-shadow: $box-shadow-sm;
+  border: 1px solid rgba($gray-500, 0.5);
+  justify-self: center;
+  position: relative;
+  bottom: 50%;
+  z-index: 4;
+  &.light {
+    background-color: $white;
+  }
+  &.dark {
+    background-color: $gray-500;
+  }
+  // padding: 5px;
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: $circle-radius;
+  }
+}
+
+.ProjectCard__body {
+  position: relative;
+  bottom: 25px;
+  padding: 0 20px;
+  justify-items: center;
+  gap: 10px;
+  & h2 {
+    font-size: 2.5em;
+  }
+}
+
+.ProjectCard__body--links {
+  justify-self: stretch;
+  justify-content: space-between;
+}
+
+.ProjectCard__body--tags {
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  & span {
+    margin: 5px;
+  }
+}
+
+.ProjectCard__body--header {
+  justify-self: stretch;
+  justify-content: space-between;
+  align-items: center;
+  & span {
+    // color: $neon;
+    font-weight: bold;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .ProjectCard {
+    grid-template-columns: 280px 1fr;
+    max-width: 1000px;
+  }
+
+  .ProjectCard__image--front {
+    bottom: 0;
+    align-self: center;
+    right: 50%;
+    grid-row-start: 1;
+    grid-column-start: 2;
+  }
+
+  .ProjectCard__body {
+    grid-row-start: 1;
+    grid-column-start: 2;
+    position: initial;
+    padding: 25px 60px;
+    gap: 20px;
+    // grid-template-columns: repeat(3, 1fr);
+  }
+
+  .ProjectCard__header--image img {
+    max-height: 260px;
+  }
+
+  .ProjectCard__header--back {
+    border-radius: none;
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+  }
+
+  .ProjectCard__body--tags {
+    justify-self: flex-end;
+  }
+
+  .ProjectCard__body--links {
+    justify-content: flex-end;
+  }
+}

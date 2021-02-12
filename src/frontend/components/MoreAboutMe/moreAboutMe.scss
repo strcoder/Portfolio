@@ -1,0 +1,137 @@
+@import '../../scss/utils/variables';
+
+.MoreAboutMe {
+  padding: 50px 25px;
+  gap: 25px;
+  background-color: $gray-500;
+  // background-color: $white;
+  & h2 {
+    text-align: center;
+    color: $white;
+  }
+}
+
+.MoreAboutMe--twitch {
+  row-gap: 5px;
+  // width: 265px;
+  width: 100%;
+  display: grid;
+  column-gap: 20px;
+  text-align: left;
+  justify-items: flex-start;
+  & i {
+    display: grid;
+    grid-row-end: span 2;
+  }
+  & span {
+    grid-column-start: 2;
+  }
+  & span:nth-child(2) {
+    font-size: $font-size-lg;
+  }
+  & span:nth-child(3) {
+    font-size: $font-size-sm;
+    font-weight: 500;
+  }
+}
+
+.MoreAboutMe--ibm, .MoreAboutMe--platzi {
+  width: 100%;
+  & span {
+    padding-left: 10px;
+  }
+}
+
+.MoreAboutMe--item {
+  gap: 25px;
+  transition: $transition-base;
+  color: $black;
+}
+
+.MoreAboutMe--links {
+  justify-content: space-between;
+  & a {
+    border-radius: $circle-radius;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.MoreAboutMe--form button {
+  width: 100%;
+}
+
+.MoreAboutMe--emoji {
+  width: 100%;
+  height: 100%;
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .MoreAboutMe {
+    // max-width: 1000px;
+    justify-items: center;
+    justify-content: center;
+    gap: 80px;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    & h2 {
+      width: 100%;
+      height: 100%;
+      color: $white;
+      max-width: 435px;
+      align-items: center;
+      border-radius: $border-radius;
+      background-color: $primary-color;
+    }
+  }
+
+  .MoreAboutMe--form {
+    display: grid;
+  }
+
+  .MoreAboutMe--item {
+    max-width: 435px;
+    color: $black;
+    border-radius: $border-radius;
+    height: max-content;
+    & p {
+      padding: 25px;
+      padding-bottom: 0;
+      grid-column-start: 1;
+      grid-row-start: 1;
+    }
+    & a {
+      grid-column-start: 1;
+      grid-row-start: 2;
+      border: none;
+    }
+    &.twitch {
+      background-color: rgba($twitch, 0.2);
+    }
+    &.ibm {
+      background-color: rgba($ibm, 0.2);
+    }
+    &.platzi {
+      background-color: rgba($platzi, 0.2);
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .MoreAboutMe {
+    padding: 50px 10%;
+    margin: 200px 0;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .MoreAboutMe {
+    padding: 50px 20%;
+  }
+}
