@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaVial, FaChartLine, FaPaperPlane, FaTimes } from 'react-icons/fa';
+import { FaVial, FaChartLine, FaTimes } from 'react-icons/fa';
 import { HiMenuAlt1 } from 'react-icons/hi';
 import { useStateValue } from '../../context';
 import ToggleSwitch from '../ToggleSwitch';
@@ -14,7 +14,7 @@ const AppBar = () => {
     <header className={`AppBar ${theme}`}>
       <div className='AppBar__header'>
         <Link to='/' className='AppBar__header--logo'>
-          <img src='/images/logo-ant.png' alt='Logo' />
+          <img src='/images/logo-ant.png' alt='Logo' width='100' height='40' />
         </Link>
         <button
           type='button'

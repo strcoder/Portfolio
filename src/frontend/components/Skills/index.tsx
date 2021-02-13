@@ -33,7 +33,7 @@ const Skills = () => {
         <p>Y siempre intento mantenerme actualizado en los temas de actualidad estudiando y practicando</p>
         <div className='flex'>
           <div className=''>
-            <h6>Tecnologias frontend que mas empleo</h6>
+            <p><strong>Tecnologias frontend que mas empleo</strong></p>
             <ul>
               <li>HTML</li>
               <li>CSS</li>
@@ -49,7 +49,7 @@ const Skills = () => {
             </ul>
           </div>
           <div className=''>
-            <h6>Tecnologias backend que mas empleo</h6>
+            <p><strong>Tecnologias backend que mas empleo</strong></p>
             <ul>
               <li>Javascript</li>
               <li>Typescript</li>

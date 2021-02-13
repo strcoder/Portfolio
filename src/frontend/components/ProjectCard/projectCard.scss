@@ -18,6 +18,10 @@
   height: 100%;
   border-radius: $border-radius;
   display: grid;
+  & source {
+    grid-row-start: 1;
+    grid-column-start: 1;
+  }
   & img {
     grid-row-start: 1;
     grid-column-start: 1;

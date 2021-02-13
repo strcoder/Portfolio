@@ -51,12 +51,14 @@ body.dark {
   color: $light-bg;
   background: $dark-bg;
   & .form-input {
+    color: $white;
     background-color: #3b3d40;
     &::placeholder {
       color: $gray-200;
     }
   }
   & .form-textarea {
+    color: $white;
     background-color: #3b3d40;
     &::placeholder {
       color: $gray-200;
@@ -123,4 +125,8 @@ body .btn-soft {
 body .btn-outline-white:hover,
 body .btn-outline-soft:hover {
   color: $black;
+}
+
+body .btn-platzi {
+  color: #273B47;
 }

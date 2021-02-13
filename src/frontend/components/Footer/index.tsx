@@ -10,10 +10,15 @@ const Footer = () => {
   return (
     <footer className={`Footer ${theme}`}>
       <div className='Footer__head'>
-        <figure className='Footer__head--image'>
+        <picture className='Footer__head--image'>
+          <source media='(min-width:768px)' srcSet='/images/logo-min.png' />
+          <source media='(min-width:425px)' srcSet='/images/logo-min.png' />
+          <img src='/images/logo-min.png' alt='Antonio Guzmán' width='150' height='150' />
+        </picture>
+        {/* <figure className='Footer__head--image'>
           <img src='/images/logo-min.png' alt='Logo' />
-        </figure>
-        <h6>Diseñado con amor</h6>
+        </figure> */}
+        <small>Diseñado con amor</small>
         <p>En colaboración con:</p>
         <Link to='/' className='btn-link-soft'>
           Armando Cruz
@@ -34,7 +39,7 @@ const Footer = () => {
       <div className={`Footer__copyright ${theme}`}>
         <p>&copy; Copyright</p>
         <Link to='/' className='btn-link-soft'>Curriculum</Link>
-        <Link to='/'>Buy me a coffee</Link>
+        <Link to='/' className='btn-link-soft'>Buy me a coffee</Link>
       </div>
     </footer>
   );

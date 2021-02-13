@@ -26,6 +26,9 @@
     & a {
       width: 100%;
     }
+    & small {
+      font-size: $font-size-xs;
+    }
   }
   &__body {
     justify-self: center;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import Hero from '../../components/Hero';
 import AboutMe from '../../components/AboutMe';
 import PageNav from '../../components/PageNav';
@@ -11,6 +12,11 @@ import './home.scss';
 const HomePage = () => {
   return (
     <>
+      <Helmet>
+        <meta charSet='utf-8' />
+        <title>Antonio Guzmán - Inicio</title>
+        <meta name='description' content='Antonio Guzmán Vilchis, desarrollador web con conocimientos en React, Typescript, NodeJS y mucho más.' />
+      </Helmet>
       <PageNav />
       <Hero />
       <AboutMe />

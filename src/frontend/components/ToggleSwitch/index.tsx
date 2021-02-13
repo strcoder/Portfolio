@@ -13,6 +13,7 @@ const ToggleSwitch = () => {
       type='button'
       className={`ToggleSwitch ${theme}`}
       onClick={() => setTheme({ theme: newTheme, dispatch })}
+      title='Cambiar tema'
     >
       <small className={`ToggleSwitch__body ${theme}`}>
         {theme === 'light' && (

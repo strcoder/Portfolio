@@ -8,13 +8,24 @@ const ProjectCard = ({ logo, title, headerImage, bgColor }: { logo: string, titl
   const { theme } = useStateValue();
   return (
     <div className={`ProjectCard ${theme}`}>
-      <figure className='ProjectCard__header--image'>
+      <picture className='ProjectCard__header--image'>
+        <div className={`ProjectCard__header--back ${bgColor}`} />
+        <source media='(min-width:768px)' srcSet={`${headerImage}h=750&w=1260`} />
+        <source media='(min-width:425px)' srcSet={`${headerImage}h=750&w=768`} />
+        <img src={`${headerImage}h=750&w=425`} alt={`${title}, ejemplifica el projecto`} width='280' height='262' />
+      </picture>
+      {/* <figure className='ProjectCard__header--image'>
         <div className={`ProjectCard__header--back ${bgColor}`} />
         <img src={headerImage} alt='' className='cover' />
-      </figure>
-      <figure className={`ProjectCard__image--front ${theme}`}>
+      </figure> */}
+      <picture className={`ProjectCard__image--front ${theme}`}>
+        <source media='(min-width:768px)' srcSet={logo} />
+        <source media='(min-width:425px)' srcSet={logo} />
+        <img src={logo} alt={title} width='100' height='100' />
+      </picture>
+      {/* <figure className={`ProjectCard__image--front ${theme}`}>
         <img src={logo} alt='profileImage' className='contain' />
-      </figure>
+      </figure> */}
       <div className='ProjectCard__body'>
         <div className='ProjectCard__body--header flex'>
           <h2 className='ProjectCard__body--title'>{title}</h2>
@@ -31,15 +42,26 @@ const ProjectCard = ({ logo, title, headerImage, bgColor }: { logo: string, titl
           <span className='tag-neon'>NodeJS</span>
         </div>
         <div className='ProjectCard__body--links flex'>
-          <Link to='/' target='_blank' className={`${theme === 'light' ? 'btn-link-github' : 'btn-link-soft'}`}>
+          <Link
+            to='/'
+            target='_blank'
+            className={`${theme === 'light' ? 'btn-link-github' : 'btn-link-soft'}`}
+            title={`Ver código  ${title} en Github`}
+          >
             <FaGithub size={20} />
           </Link>
-          <Link to='/' target='_blank' className={`${theme === 'light' ? 'btn-link' : 'btn-link-soft'}`}>
+          <Link
+            to='/'
+            target='_blank'
+            className={`${theme === 'light' ? 'btn-link' : 'btn-link-soft'}`}
+            title={`Visitar página oficial de ${title}`}
+          >
             <FaLink size={20} />
           </Link>
           <Link
             to='/project'
             className={`${theme === 'light' ? 'btn-outline' : 'btn-outline-soft'}`}
+            title={`Ver más acerca del proyecto ${title}`}
           >
             Conocer más
           </Link>

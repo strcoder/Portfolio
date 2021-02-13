@@ -9,9 +9,14 @@ const AboutMe = () => {
   return (
     <section id='AboutMe' className={`AboutMe ${theme}`}>
       <h2>{'<About Me>'}</h2>
-      <figure className='AboutMe__emoji'>
-        <img src='/images/emoji.png' alt='Emoji' />
-      </figure>
+      <picture className='AboutMe__emoji'>
+        <source media='(min-width:768px)' srcSet='/images/emoji.png' />
+        <source media='(min-width:425px)' srcSet='/images/emoji.png' />
+        <img src='/images/emoji.png' alt='Mi emoji Saludando' width='300' height='300' />
+      </picture>
+      {/* <figure className='AboutMe__emoji'>
+        <img src='/images/emoji.png' alt='Emoji' width='' />
+      </figure> */}
       <div className='AboutMe__body'>
         <p>Hi!, My name is Antonio Guzmán.</p>
         <p>
@@ -37,21 +42,21 @@ const AboutMe = () => {
         </p>
         <p className='AboutMe__footer--contact'>
           If you’d like to chat
-          <Link to='/' className={`${theme === 'light' ? 'btn-link' : 'btn-link-soft'}`}>
+          <a href='#Contact' className={`${theme === 'light' ? 'btn-link' : 'btn-link-soft'}`} title='Ponte en contacto conmigo'>
             contact me.
-          </Link>
+          </a>
         </p>
       </div>
       <div className={`AboutMe__footer ${theme}`}>
         You can also find me there:
         <nav>
-          <Link to='/' className='btn-link-soft'>
+          <Link to='/github' className='btn-link-soft' title='Visitame en Github'>
             <FaGithub />
           </Link>
-          <Link to='/' className='btn-link-soft'>
+          <Link to='/linkedin' className='btn-link-soft' title='Visitame en Linkedin'>
             <FaLinkedinIn />
           </Link>
-          <Link to='/' className='btn-link-soft'>
+          <Link to='/twitch' className='btn-link-soft' title='Visitame en Twitch'>
             <FaTwitch />
           </Link>
         </nav>

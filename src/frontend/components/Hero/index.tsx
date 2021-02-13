@@ -16,12 +16,18 @@ const Hero = () => {
   const { theme } = useStateValue();
   return (
     <section className={`Hero ${theme}`}>
-      <figure className='Hero__image'>
-        <img
-          src={theme === 'light' ? '/images/hero2.jpg' : '/images/hero.jpg'}
-          alt='Keyboard'
-        />
-      </figure>
+      {theme === 'light' && (
+        <picture className='Hero__image'>
+          <source media='(min-width:1024px)' srcSet='/images/hero-white-lg.jpg' />
+          <img src='/images/hero-white-sm.jpg' width='100vw' height='100vh' alt='Keyboard black' />
+        </picture>
+      )}
+      {theme === 'dark' && (
+        <picture className='Hero__image'>
+          <source media='(min-width:1024px)' srcSet='/images/hero-black-lg.jpg' />
+          <img src='/images/hero-black-sm.jpg' width='100vw' height='100vh' alt='Keyboard black' />
+        </picture>
+      )}
       <div className={`Hero--background ${theme}`} />
       <div className='Hero__body'>
         <h3>Welcome!</h3>
@@ -34,24 +40,24 @@ const Hero = () => {
           <li>NodeJS</li>
         </ul>
         <nav className={`Hero__body--links ${theme}`}>
-          <Link to='/' className='btn-link-facebook'>
+          <Link to='/facebook' className='btn-link-facebook' title='Visitame en Facebbok'>
             <FaFacebookF />
           </Link>
-          <Link to='/' className='btn-link-twitter'>
+          <Link to='/twitter' className='btn-link-twitter' title='Visitame en Twitter'>
             <FaTwitter />
           </Link>
-          <Link to='/' className='btn-link-instagram'>
+          <Link to='/instagram' className='btn-link-instagram' title='Visitame en Instagram'>
             <FaInstagram />
           </Link>
-          <Link to='/' className='btn-link-linkedin'>
+          <Link to='/linkedin' className='btn-link-linkedin' title='Visitame en Linkedin'>
             <FaLinkedinIn />
           </Link>
-          <Link to='/' className='btn-link-twitch'>
+          <Link to='/twitch' className='btn-link-twitch' title='Visitame en Twitch'>
             <FaTwitch />
           </Link>
         </nav>
       </div>
-      <a href='#AboutMe' className={`Hero__helper btn-link ${theme}`}>
+      <a href='#AboutMe' className={`Hero__helper btn-link ${theme}`} title='Mostrar más contenido'>
         <FaAngleDoubleDown size={30} />
       </a>
     </section>
