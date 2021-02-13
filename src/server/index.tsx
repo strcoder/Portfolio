@@ -27,7 +27,6 @@ const setResponse = (html: string, preloadedState: preloadState) => {
         <meta charset="utf-8" />
         <meta name="theme-color" content="#02132d" />
         <link rel="icon" href="images/logo-min.png" />
-        <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="preconnect" href="https://fonts.gstatic.com">
