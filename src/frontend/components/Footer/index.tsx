@@ -1,12 +1,21 @@
 import React from 'react';
+import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { useStateValue } from '../../context';
+import { saveEmail } from '../../context/actions';
 import './footer.scss';
 
 // const Image = require('../../static/assets/images/logo-min.png');
 
 const Footer = () => {
-  const { theme } = useStateValue();
+  const { theme, dispatch } = useStateValue();
+  const { register, handleSubmit, errors } = useForm();
+
+  const onSubmit = (data) => {
+    const { email } = data;
+    saveEmail({ email, dispatch });
+  };
+
   return (
     <footer className={`Footer ${theme}`}>
       <div className='Footer__head'>
@@ -28,12 +37,26 @@ const Footer = () => {
       </div>
       <div className='Footer__body'>
         <h3>¿Creamos algo juntos?</h3>
-        <form className='form-control'>
+        <form className='form-control' onSubmit={handleSubmit(onSubmit)}>
           <label htmlFor='UserMail' className='form-label'>
             <span>Dejame tu correo</span>
-            <input type='email' id='UserMail' placeholder='Digita tu correo electronico' className='form-input' />
+            <input
+              type='email'
+              id='UserMail'
+              name='email'
+              placeholder='Digita tu correo electronico'
+              className='form-input'
+              ref={register({
+                required: 'No olvides dejarme tu correo',
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: 'Por favor digita un correo valido',
+                },
+              })}
+            />
+            {errors.email && <span className='form-error'>{errors.email.message}</span>}
           </label>
-          <button type='button' className='form-button btn-tertiary'>Enviar</button>
+          <button type='submit' className='form-button btn-tertiary'>Enviar</button>
         </form>
       </div>
       <div className={`Footer__copyright ${theme}`}>

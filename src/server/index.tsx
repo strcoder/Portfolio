@@ -8,6 +8,8 @@ import { ENV, PORT } from './config';
 import { Provider } from '../frontend/context';
 import { preloadState } from './model/preloadState';
 import ServerApp from '../frontend/routes/ServerRoutes';
+import { getData } from './controller/data';
+import Routes from './routes';
 
 const app = express();
 
@@ -48,8 +50,13 @@ const setResponse = (html: string, preloadedState: preloadState) => {
 
 const renderApp = async (req: express.Request, res: express.Response) => {
   const { theme } = req.cookies;
+  const projects = await getData({ route: 'project' });
+  const socialMedia = await getData({ id: '602af04697a43ef69c8e0488', route: 'social-media' });
+  // console.log(projects);
   const initialState: preloadState = {
     theme: theme || 'light',
+    projects,
+    socialMedia,
   };
 
   const html = renderToString(
@@ -67,6 +74,7 @@ const renderApp = async (req: express.Request, res: express.Response) => {
 app.use(express.static(`${__dirname}/public`));
 app.use(express.static(`${__dirname}/assets`));
 app.get('*', renderApp);
+Routes(app);
 
 app.listen(PORT, () => {
   console.log(`${ENV} server running on Port ${PORT}`);

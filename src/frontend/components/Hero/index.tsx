@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import {
   FaAngleDoubleDown,
   FaFacebookF,
@@ -13,7 +12,7 @@ import { useStateValue } from '../../context';
 import './hero.scss';
 
 const Hero = () => {
-  const { theme } = useStateValue();
+  const { theme, socialMedia } = useStateValue();
   return (
     <section className={`Hero ${theme}`}>
       {theme === 'light' && (
@@ -40,21 +39,51 @@ const Hero = () => {
           <li>NodeJS</li>
         </ul>
         <nav className={`Hero__body--links ${theme}`}>
-          <Link to='/facebook' className='btn-link-facebook' title='Visitame en Facebbok'>
+          <a
+            target='_blank'
+            rel='noreferrer'
+            href={socialMedia.facebook}
+            title='Visitame en Facebbok'
+            className='btn-link-facebook'
+          >
             <FaFacebookF />
-          </Link>
-          <Link to='/twitter' className='btn-link-twitter' title='Visitame en Twitter'>
+          </a>
+          <a
+            target='_blank'
+            rel='noreferrer'
+            href={socialMedia.twitter}
+            className='btn-link-twitter'
+            title='Visitame en Twitter'
+          >
             <FaTwitter />
-          </Link>
-          <Link to='/instagram' className='btn-link-instagram' title='Visitame en Instagram'>
+          </a>
+          <a
+            target='_blank'
+            rel='noreferrer'
+            href={socialMedia.instagram}
+            className='btn-link-instagram'
+            title='Visitame en Instagram'
+          >
             <FaInstagram />
-          </Link>
-          <Link to='/linkedin' className='btn-link-linkedin' title='Visitame en Linkedin'>
+          </a>
+          <a
+            target='_blank'
+            rel='noreferrer'
+            href={socialMedia.linkedin}
+            className='btn-link-linkedin'
+            title='Visitame en Linkedin'
+          >
             <FaLinkedinIn />
-          </Link>
-          <Link to='/twitch' className='btn-link-twitch' title='Visitame en Twitch'>
+          </a>
+          <a
+            target='_blank'
+            rel='noreferrer'
+            href={socialMedia.twitch}
+            className='btn-link-twitch'
+            title='Visitame en Twitch'
+          >
             <FaTwitch />
-          </Link>
+          </a>
         </nav>
       </div>
       <a href='#AboutMe' className={`Hero__helper btn-link ${theme}`} title='Mostrar más contenido'>

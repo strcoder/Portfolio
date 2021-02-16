@@ -4,7 +4,19 @@ import { FaGithub, FaLink } from 'react-icons/fa';
 import { useStateValue } from '../../context';
 import './projectCard.scss';
 
-const ProjectCard = ({ logo, title, headerImage, bgColor }: { logo: string, title: string, headerImage: string, bgColor: string }) => {
+type ProjectCardProps = {
+  url: string,
+  date: string,
+  logo: string,
+  tags: string[],
+  title: string,
+  github: string,
+  bgColor: string,
+  headerImage: string,
+  description: string,
+};
+
+const ProjectCard = ({ logo, title, date, headerImage, bgColor, tags, url, description, github }: ProjectCardProps) => {
   const { theme } = useStateValue();
   return (
     <div className={`ProjectCard ${theme}`}>
@@ -14,50 +26,46 @@ const ProjectCard = ({ logo, title, headerImage, bgColor }: { logo: string, titl
         <source media='(min-width:425px)' srcSet={`${headerImage}h=750&w=768`} />
         <img src={`${headerImage}h=750&w=425`} alt={`${title}, ejemplifica el projecto`} width='280' height='262' />
       </picture>
-      {/* <figure className='ProjectCard__header--image'>
-        <div className={`ProjectCard__header--back ${bgColor}`} />
-        <img src={headerImage} alt='' className='cover' />
-      </figure> */}
       <picture className={`ProjectCard__image--front ${theme}`}>
         <source media='(min-width:768px)' srcSet={logo} />
         <source media='(min-width:425px)' srcSet={logo} />
         <img src={logo} alt={title} width='100' height='100' />
       </picture>
-      {/* <figure className={`ProjectCard__image--front ${theme}`}>
-        <img src={logo} alt='profileImage' className='contain' />
-      </figure> */}
       <div className='ProjectCard__body'>
         <div className='ProjectCard__body--header flex'>
           <h2 className='ProjectCard__body--title'>{title}</h2>
-          <span className={`${theme === 'light' ? 'text-neon' : 'text-soft'}`}>01/01/2021</span>
+          <span className={`${theme === 'light' ? 'text-neon' : 'text-soft'}`}>{`${date}-actual`}</span>
         </div>
         <p className='ProjectCard__body--description'>
-          Some quick example text to build on the card title and make up the
-          bulk of the card&apos;s content.
+          {description}
         </p>
         <div className='ProjectCard__body--tags flex'>
-          <span className='tag-neon'>ReactJS</span>
-          <span className='tag-neon'>Typescript</span>
+          {tags.map((tag) => (
+            <span key={tag} className='tag-neon'>{tag}</span>
+          ))}
+          {/* <span className='tag-neon'>Typescript</span>
           <span className='tag-neon'>SASS</span>
-          <span className='tag-neon'>NodeJS</span>
+          <span className='tag-neon'>NodeJS</span> */}
         </div>
         <div className='ProjectCard__body--links flex'>
-          <Link
-            to='/'
+          <a
+            href={url}
             target='_blank'
+            rel='noreferrer'
             className={`${theme === 'light' ? 'btn-link-github' : 'btn-link-soft'}`}
             title={`Ver código  ${title} en Github`}
           >
             <FaGithub size={20} />
-          </Link>
-          <Link
-            to='/'
+          </a>
+          <a
+            href={github}
             target='_blank'
+            rel='noreferrer'
             className={`${theme === 'light' ? 'btn-link' : 'btn-link-soft'}`}
             title={`Visitar página oficial de ${title}`}
           >
             <FaLink size={20} />
-          </Link>
+          </a>
           <Link
             to='/project'
             className={`${theme === 'light' ? 'btn-outline' : 'btn-outline-soft'}`}

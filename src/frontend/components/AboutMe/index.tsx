@@ -1,11 +1,10 @@
 import React from 'react';
 import { FaGithub, FaLinkedinIn, FaTwitch } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
 import { useStateValue } from '../../context';
 import './aboutMe.scss';
 
 const AboutMe = () => {
-  const { theme } = useStateValue();
+  const { theme, socialMedia } = useStateValue();
   return (
     <section id='AboutMe' className={`AboutMe ${theme}`}>
       <h2>{'<About Me>'}</h2>
@@ -50,15 +49,33 @@ const AboutMe = () => {
       <div className={`AboutMe__footer ${theme}`}>
         You can also find me there:
         <nav>
-          <Link to='/github' className='btn-link-soft' title='Visitame en Github'>
+          <a
+            target='_blank'
+            rel='noreferrer'
+            href={socialMedia.github}
+            className='btn-link-soft'
+            title='Visitame en Github'
+          >
             <FaGithub />
-          </Link>
-          <Link to='/linkedin' className='btn-link-soft' title='Visitame en Linkedin'>
+          </a>
+          <a
+            target='_blank'
+            rel='noreferrer'
+            href={socialMedia.linkedin}
+            className='btn-link-soft'
+            title='Visitame en Linkedin'
+          >
             <FaLinkedinIn />
-          </Link>
-          <Link to='/twitch' className='btn-link-soft' title='Visitame en Twitch'>
+          </a>
+          <a
+            target='_blank'
+            rel='noreferrer'
+            href={socialMedia.twitch}
+            className='btn-link-soft'
+            title='Visitame en Twitch'
+          >
             <FaTwitch />
-          </Link>
+          </a>
         </nav>
       </div>
     </section>

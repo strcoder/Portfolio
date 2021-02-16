@@ -85,6 +85,10 @@
       padding-left: 5px;
     }
   }
+  &-error {
+    font-size: $font-size-xs;
+    color: $danger-color;
+  }
 }
 
 // @mixin formBasicDark {
