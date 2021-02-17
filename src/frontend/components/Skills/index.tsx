@@ -26,14 +26,17 @@ const Skills = () => {
         </div>
       </div>
       <div className='Skills__body'>
-        <p>Me considero un desarrollador web full stack ya que tengo conocimientos para crear soluciones tanto en frontend como en backend</p>
-        <p>Mi principal enfoque es desarrollo de aplicaciones web mediante el framework ReactJS y utilizando como guia de estilos al preprocesador sass pero sin dejar a un lado en manejo vanilla como HTML, CSS y Javascript</p>
-        <p>Puedo crear soluciones del lado del cliente como soluciones del lado del servidor</p>
-        <p>Tambien puedo crear API&apos;s con NodeJS utilizando como backend a MongoDB</p>
-        <p>Y siempre intento mantenerme actualizado en los temas de actualidad estudiando y practicando</p>
+        <p>
+          Me considero un desarrollador web full stack ya que tengo conocimientos para crear soluciones tanto en frontend como en backend.
+          Mi principal enfoque es el desarrollo de aplicaciones web mediante el framework ReactJS y utilizando como guía de estilos al preprocesador sass pero sin dejar a un lado en manejo vanilla como HTML, CSS y Javascript.
+          Puedo crear soluciones del lado del cliente como soluciones del lado del servidor
+          Tambien puedo crear API&apos;s con NodeJS utilizando como backend a MongoDB
+          Y siempre intento mantenerme actualizado en los temas de actualidad y estándares.
+          Me sigo preparando mediante el estudio y la práctica.
+        </p>
         <div className='flex'>
           <div className=''>
-            <p><strong>Tecnologias frontend que mas empleo</strong></p>
+            <p><strong>Tecnologías frontend que más empleo</strong></p>
             <ul>
               <li>HTML</li>
               <li>CSS</li>
@@ -49,7 +52,7 @@ const Skills = () => {
             </ul>
           </div>
           <div className=''>
-            <p><strong>Tecnologias backend que mas empleo</strong></p>
+            <p><strong>Tecnologías backend que más empleo</strong></p>
             <ul>
               <li>Javascript</li>
               <li>Typescript</li>

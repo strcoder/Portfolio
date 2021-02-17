@@ -61,7 +61,14 @@ const Footer = () => {
       </div>
       <div className={`Footer__copyright ${theme}`}>
         <p>&copy; Copyright</p>
-        <Link to='/' className='btn-link-soft'>Curriculum</Link>
+        <a
+          target='_blank'
+          rel='noreferrer'
+          className='btn-link-soft'
+          href='https://drive.google.com/file/d/1LyqgXURXHdfYjtI89sFbK17cN3MXRH8D/view?usp=sharing'
+        >
+          Curriculum
+        </a>
         <Link to='/' className='btn-link-soft'>Buy me a coffee</Link>
       </div>
     </footer>

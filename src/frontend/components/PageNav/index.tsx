@@ -15,7 +15,7 @@ const PageNav = () => {
         onClick={() => window.scroll(0, 0)}
       >
         <FaHome size={25} />
-        <span>Home</span>
+        <span>Inicio</span>
       </Link>
       <a href='#AboutMe' className='btn-outline-neon' title='Ir a la sección acerca de mi'>
         <FaTeamspeak size={25} />

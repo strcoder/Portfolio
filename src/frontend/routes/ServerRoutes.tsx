@@ -12,7 +12,7 @@ const serverRoutes = () => {
       component: Home,
     },
     {
-      path: '/project',
+      path: '/project/name',
       exact: true,
       component: Project,
     },

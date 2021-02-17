@@ -49,16 +49,16 @@ const ProjectCard = ({ logo, title, date, headerImage, bgColor, tags, url, descr
         </div>
         <div className='ProjectCard__body--links flex'>
           <a
-            href={url}
+            href={github}
             target='_blank'
             rel='noreferrer'
             className={`${theme === 'light' ? 'btn-link-github' : 'btn-link-soft'}`}
-            title={`Ver código  ${title} en Github`}
+            title={`Ver código de ${title} en Github`}
           >
             <FaGithub size={20} />
           </a>
           <a
-            href={github}
+            href={url}
             target='_blank'
             rel='noreferrer'
             className={`${theme === 'light' ? 'btn-link' : 'btn-link-soft'}`}
@@ -67,7 +67,7 @@ const ProjectCard = ({ logo, title, date, headerImage, bgColor, tags, url, descr
             <FaLink size={20} />
           </a>
           <Link
-            to='/project'
+            to={`/project/${title.toLocaleLowerCase()}`}
             className={`${theme === 'light' ? 'btn-outline' : 'btn-outline-soft'}`}
             title={`Ver más acerca del proyecto ${title}`}
           >

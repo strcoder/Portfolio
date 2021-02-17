@@ -21,7 +21,7 @@ const Contact = () => {
 
   return (
     <section className='Contact' id='Contact'>
-      <p className='MoreAboutMe--lastP'>Por ultimo si quieres sabes más de mi o trabajar conmigo puedes contactarme con el siguiente formulario o en mis redes sociales</p>
+      <p className='MoreAboutMe--lastP'>Por último si quieres sabes más de mi o trabajar conmigo puedes contactarme con el siguiente formulario o en mis redes sociales</p>
       <nav className='MoreAboutMe--links'>
         <a
           target='_blank'

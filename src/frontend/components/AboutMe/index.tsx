@@ -7,7 +7,7 @@ const AboutMe = () => {
   const { theme, socialMedia } = useStateValue();
   return (
     <section id='AboutMe' className={`AboutMe ${theme}`}>
-      <h2>{'<About Me>'}</h2>
+      <h2>{'<Acerca de mi>'}</h2>
       <picture className='AboutMe__emoji'>
         <source media='(min-width:768px)' srcSet='/images/emoji.png' />
         <source media='(min-width:425px)' srcSet='/images/emoji.png' />
@@ -17,37 +17,21 @@ const AboutMe = () => {
         <img src='/images/emoji.png' alt='Emoji' width='' />
       </figure> */}
       <div className='AboutMe__body'>
-        <p>Hi!, My name is Antonio Guzmán.</p>
+        <p>Hola!</p>
         <p>
-          I am starting in the development world, I am a front-end web
-          developer and I am studying computer engineering at the
-          {' '}
-          <strong>UAM-C.</strong>
-          {' '}
-        </p>
-        <p>
-          I am passionate about web development, I have experience creating
-          projects with
-          {' '}
-          <strong> HTML, CSS3 & JS </strong>
-          {' '}
-          and I am also
-          familiar using libraries like
-          {' '}
-          <strong>ReactJs with Typescript</strong>
-          {' '}
-          and I am also interested in
-          the world of mobile and games development.
+          Soy antonio guzman y tengo 24 años, actualmente me encuentro estudiando la carrera de ingeniería en computación dentro de la universidad autónoma metropolitana (UAM-C)
+          Me apasiona el mundo del desarrollo web, mi principal enfoque es crear aplicaciones de alto impacto en la sociedad, mis metas como desarrollador web es especializarme dentro del área fullstack ya sea en una empresa que se ajuste a mis valores o diseñar una startup que sea innovadora en el ámbito académico.
+          Mis metas personales son perfeccionar el inglés, salir de mi zona de confort con nuevos retos.
         </p>
         <p className='AboutMe__footer--contact'>
-          If you’d like to chat
+          Si quieres platicar un poco
           <a href='#Contact' className={`${theme === 'light' ? 'btn-link' : 'btn-link-soft'}`} title='Ponte en contacto conmigo'>
-            contact me.
+            contactame.
           </a>
         </p>
       </div>
       <div className={`AboutMe__footer ${theme}`}>
-        You can also find me there:
+        También puedes encontrarme en:
         <nav>
           <a
             target='_blank'
