@@ -4,6 +4,7 @@ import { useStateValue } from '../context';
 import Layout from '../components/Layout';
 import HomePage from '../pages/Home';
 import Project from '../pages/Project';
+import NotFound from '../pages/NotFound';
 // import Portfolio from '../pages/Portfolio';
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
         <Switch>
           <Route exact path='/' component={HomePage} />
           <Route exact path='/project/:name' component={Project} />
+          <Route exact component={NotFound} />
         </Switch>
       </Layout>
     </BrowserRouter>
