@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { response } from 'express';
 
 export const setTheme = async ({ theme, dispatch }: any) => {
   try {

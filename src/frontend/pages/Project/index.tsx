@@ -97,10 +97,10 @@ const Project = () => {
               </div>
               <div className='Project__footer--item'>
                 <p>Te gustaría coloborar en el proyecto</p>
-                <Link to='/together' className='btn-neon'>
+                <a href='/#Contact' className='btn-neon'>
                   <FaReact />
                   <span>Colaborar</span>
-                </Link>
+                </a>
               </div>
             </div>
           </section>
