@@ -1,22 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitch, FaTwitter } from 'react-icons/fa';
 import { useStateValue } from '../../context';
 import { saveMessage } from '../../context/actions';
+import MessageModal from '../MessageModal';
 import './contact.scss';
 
 const Contact = () => {
   const { socialMedia, dispatch } = useStateValue();
   const { register, handleSubmit, errors } = useForm();
+  const [modal, setModal] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
-  const onSubmit = (data: any) => {
+  const onSubmit = async (data: any, e: any) => {
+    setLoading(true);
+    setModal(true);
     const message = {
       username: data.name,
       userMail: data.email,
       message: data.userMessage,
     };
-    saveMessage({ message, dispatch });
-    // console.log(data);
+    const response = await saveMessage({ message, dispatch });
+    setLoading(false);
+    if (response) {
+      e.target.reset();
+    } else {
+      setError(true);
+    }
   };
 
   return (
@@ -127,6 +138,7 @@ const Contact = () => {
         <source media='(min-width:425px)' srcSet='/images/emoji2.png' />
         <img src='/images/emoji2.png' alt='Mi emoji Saludando' width='450' height='450' />
       </picture>
+      <MessageModal isOpen={modal} onClosed={() => setModal(false)} isLoading={loading} isError={error} />
     </section>
   );
 };

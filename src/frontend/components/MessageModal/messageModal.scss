@@ -1,0 +1,24 @@
+@import '../../scss/utils/variables';
+
+.MessageModal, .EmailModal {
+  padding: 25px;
+  padding-top: 10px;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+  & button {
+    width: 100%;
+  }
+}
+
+.MessageModal--loader, .EmailModal--loader {
+  -webkit-animation:spin 3s linear infinite;
+  -moz-animation:spin 3s linear infinite;
+  animation:spin 3s linear infinite;
+  color: $neon;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { response } from 'express';
 
 export const setTheme = async ({ theme, dispatch }: any) => {
   try {
@@ -11,23 +12,27 @@ export const setTheme = async ({ theme, dispatch }: any) => {
 
 export const saveMessage = async ({ message, dispatch }: any) => {
   try {
-    await axios({
+    const response = await axios({
       url: '/api/message',
       method: 'post',
       data: message,
     }).then(({ data }) => {
       dispatch({ type: 'SAVE_MESSAGE' });
+      return true;
     }).catch((error) => {
       dispatch({ type: 'SET_ERROR', error });
+      return false;
     });
+    return response;
   } catch (error) {
     dispatch({ type: 'SET_ERROR', error });
+    return false;
   }
 };
 
 export const saveEmail = async ({ email, dispatch }: any) => {
   try {
-    await axios({
+    const response = await axios({
       url: '/api/mail',
       method: 'post',
       data: {
@@ -35,11 +40,15 @@ export const saveEmail = async ({ email, dispatch }: any) => {
       },
     }).then(({ data }) => {
       dispatch({ type: 'SAVE_EMAIL' });
+      return true;
     }).catch((error) => {
       dispatch({ type: 'SET_ERROR', error });
+      return false;
     });
+    return response;
   } catch (error) {
     dispatch({ type: 'SET_ERROR', error });
+    return false;
   }
 };
 

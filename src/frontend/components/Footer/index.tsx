@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { useStateValue } from '../../context';
 import { saveEmail } from '../../context/actions';
+import EmailModal from '../EmailModal';
 import './footer.scss';
 
 // const Image = require('../../static/assets/images/logo-min.png');
@@ -10,10 +11,21 @@ import './footer.scss';
 const Footer = () => {
   const { theme, dispatch } = useStateValue();
   const { register, handleSubmit, errors } = useForm();
+  const [modal, setModal] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data, e) => {
+    setLoading(true);
+    setModal(true);
     const { email } = data;
-    saveEmail({ email, dispatch });
+    const response = await saveEmail({ email, dispatch });
+    setLoading(false);
+    if (response) {
+      e.target.reset();
+    } else {
+      setError(true);
+    }
   };
 
   return (
@@ -71,6 +83,7 @@ const Footer = () => {
         </a>
         <Link to='/' className='btn-link-soft'>Buy me a coffee</Link>
       </div>
+      <EmailModal isOpen={modal} onClosed={() => setModal(false)} isLoading={loading} isError={error} />
     </footer>
   );
 };
