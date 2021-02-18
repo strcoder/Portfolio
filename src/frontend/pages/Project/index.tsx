@@ -30,7 +30,6 @@ const Project = () => {
   const { name } = useParams();
   const { theme, projects, socialMedia } = useStateValue();
   const project: any = projects.find((project: any) => project.name.toLowerCase() === name);
-  console.log(project);
 
   return (
     <>

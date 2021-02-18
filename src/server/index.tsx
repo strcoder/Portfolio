@@ -52,7 +52,6 @@ const renderApp = async (req: express.Request, res: express.Response) => {
   const { theme } = req.cookies;
   const projects = await getData({ route: 'project' });
   const socialMedia = await getData({ id: '602af04697a43ef69c8e0488', route: 'social-media' });
-  // console.log(projects);
   const initialState: preloadState = {
     theme: theme || 'light',
     projects,

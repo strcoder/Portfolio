@@ -15,7 +15,12 @@
   // width: 320px;
   max-width: 320px;
   border-radius: $border-radius;
-  background-color: $white;
+  &.light {
+    background-color: $white;
+  }
+  &.dark {
+    background-color: #3b3d40;
+  }
   & button:first-child {
     justify-self: flex-end;
   }
