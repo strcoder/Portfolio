@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaTwitch } from 'react-icons/fa';
-import { SiIbm, SiPlatzi } from 'react-icons/si';
+import { SiPlatzi } from 'react-icons/si';
 import { useStateValue } from '../../context';
 import './moreAboutMe.scss';
 
@@ -25,18 +25,18 @@ const MoreAboutMe = () => {
           <span>Se una más de la counidad</span>
         </a>
       </div>
-      <div className='MoreAboutMe--item ibm'>
+      <div className='MoreAboutMe--item platzi'>
         <p>
-          En los últimos meses me he apasionado con un proyecto que puede lograr un cambio en mi comunidad en el ámbito educativo, empezó como un pequeño proyecto escolar con unos compañeros el cual ha ido escalando y mejorando y me ha ayudado a ir mejorando mis habilidades técnicas y personales. Gracias a este proyecto fue que participe en el reto IBM, ahí desempeñe el rol de líder y junto a mis compañeros logramos quedar dentro de los primeros 5 lugares
+          En 2021 me inscribi a un concurso en platzi para crear una plataforma de e-commerce en tiempo record, el proyecto realizado fue Foody+ en ese proyecto yo realice la lógica del frontend y colabore conjuntamente con un personas extraordinarias de diferentes países.
         </p>
         <a
-          href='https://www.developer-land.tv/retos/educacion-remota-con-ibm/'
+          href='https://platzi.com/blog/olimpiadas-premiacion-olympia-challenge/'
           target='_blank'
           rel='noreferrer'
-          className='MoreAboutMe--ibm btn-ibm'
+          className='MoreAboutMe--platzi btn-platzi'
           title='Visitar reto de IBM'
         >
-          <SiIbm size={30} />
+          <SiPlatzi size={30} />
           <span>Ver página del reto</span>
         </a>
       </div>
@@ -45,7 +45,7 @@ const MoreAboutMe = () => {
           Actualmente me encuentro desarrollando mi carrera ingeniería en computación en la UAM-C, y lo complemento estudiando de manera autodidacta y a la vez con cursos en línea dentro de la plataforma educativa plazi la cual me ha fomentado la idea de nunca parar de aprender y seguir creciendo como persona
         </p>
         <a
-          href='https://platzi.com/p/strcoder/'
+          href='https://platzi.com/p/agvcoder/'
           target='_blank'
           rel='noreferrer'
           className='MoreAboutMe--platzi btn-platzi'
