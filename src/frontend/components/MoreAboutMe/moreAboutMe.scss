@@ -1,20 +1,18 @@
 @import '../../scss/utils/variables';
 
 .MoreAboutMe {
-  padding: 50px 25px;
   gap: 25px;
-  background-color: $gray-500;
-  // background-color: $white;
+  padding: 50px 25px;
   & h2 {
+    padding: 20px;
     text-align: center;
-    color: $white;
+    font-size: $font-size-lg;
   }
 }
 
 .MoreAboutMe--twitch {
-  row-gap: 5px;
-  // width: 265px;
   width: 100%;
+  row-gap: 5px;
   display: grid;
   column-gap: 20px;
   text-align: left;
@@ -44,16 +42,16 @@
 
 .MoreAboutMe--item {
   gap: 25px;
-  transition: $transition-base;
   color: $black;
+  transition: $transition-base;
 }
 
 .MoreAboutMe--links {
   justify-content: space-between;
   & a {
-    border-radius: $circle-radius;
     width: 50px;
     height: 50px;
+    border-radius: $circle-radius;
   }
 }
 
@@ -64,11 +62,11 @@
 @media screen and (min-width: 768px) {
   .MoreAboutMe {
     // max-width: 1000px;
+    gap: 80px;
+    align-items: center;
     justify-items: center;
     justify-content: center;
-    gap: 80px;
     grid-template-columns: repeat(2, 1fr);
-    align-items: center;
     & h2 {
       width: 100%;
       height: 100%;
@@ -93,35 +91,34 @@
     & p {
       padding: 25px;
       padding-bottom: 0;
-      grid-column-start: 1;
       grid-row-start: 1;
+      grid-column-start: 1;
     }
     & a {
-      grid-column-start: 1;
-      grid-row-start: 2;
       border: none;
+      grid-row-start: 2;
+      grid-column-start: 1;
     }
     &.twitch {
-      background-color: rgba($twitch, 0.2);
+      background-color: rgba($twitch, 0.5);
     }
     &.ibm {
-      background-color: rgba($ibm, 0.2);
+      background-color: rgba($ibm, 0.5);
     }
     &.platzi {
-      background-color: rgba($platzi, 0.2);
+      background-color: rgba($platzi, 0.5);
     }
   }
 }
 
 @media screen and (min-width: 1024px) {
   .MoreAboutMe {
-    padding: 50px 10%;
-    margin: 200px 0;
+    padding: 150px 10%;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .MoreAboutMe {
-    padding: 50px 20%;
+    padding: 150px 20%;
   }
 }

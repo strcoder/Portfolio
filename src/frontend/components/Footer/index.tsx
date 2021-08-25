@@ -41,9 +41,14 @@ const Footer = () => {
         </figure> */}
         <small>Diseñado con amor</small>
         <p>En colaboración con:</p>
-        <Link to='/' className='btn-link-soft'>
+        <a
+          target='_blank'
+          rel='noreferrer'
+          className='btn-link-soft'
+          href='https://armandocresportafolio.herokuapp.com/'
+        >
           Armando Cruz
-        </Link>
+        </a>
         {/* <p>Gracias por llegar hasta aqu. Nos vemos pronto</p>
         <Link to='/' className='btn-accent'>Aqui pudes encontrar mi curriculum</Link> */}
       </div>
@@ -77,7 +82,7 @@ const Footer = () => {
           target='_blank'
           rel='noreferrer'
           className='btn-link-soft'
-          href='https://drive.google.com/file/d/1LyqgXURXHdfYjtI89sFbK17cN3MXRH8D/view?usp=sharing'
+          href='/pdf/CV-Antonio-es.pdf'
         >
           Curriculum
         </a>
