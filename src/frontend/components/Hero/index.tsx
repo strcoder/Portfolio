@@ -15,7 +15,7 @@ const Hero = () => {
   const { theme, socialMedia } = useStateValue();
   return (
     <section className={`Hero ${theme}`}>
-      {theme === 'light' && (
+      {/* {theme === 'light' && (
         <picture className='Hero__image'>
           <source media='(min-width:1024px)' srcSet='/images/hero-white-lg.jpg' />
           <img src='/images/hero-white-sm.jpg' width='100vw' height='100vh' alt='Keyboard black' />
@@ -26,10 +26,10 @@ const Hero = () => {
           <source media='(min-width:1024px)' srcSet='/images/hero-black-lg.jpg' />
           <img src='/images/hero-black-sm.jpg' width='100vw' height='100vh' alt='Keyboard black' />
         </picture>
-      )}
+      )} */}
       <div className={`Hero--background ${theme}`} />
       <div className='Hero__body'>
-        <h3>Welcome!</h3>
+        <h3>Bienvenido a mi portafolio!</h3>
         <h1>I&apos;m Web Developer</h1>
         <ul className='Hero__body--details'>
           <li>ReactJS</li>
@@ -86,9 +86,9 @@ const Hero = () => {
           </a>
         </nav>
       </div>
-      <a href='#AboutMe' className={`Hero__helper btn-link ${theme}`} title='Mostrar más contenido'>
+      {/* <a href='#AboutMe' className={`Hero__helper btn-link ${theme}`} title='Mostrar más contenido'>
         <FaAngleDoubleDown size={30} />
-      </a>
+      </a> */}
     </section>
   );
 };

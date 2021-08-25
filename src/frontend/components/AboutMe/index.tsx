@@ -7,21 +7,16 @@ const AboutMe = () => {
   const { theme, socialMedia } = useStateValue();
   return (
     <section id='AboutMe' className={`AboutMe ${theme}`}>
-      <h2>{'<Acerca de mi>'}</h2>
-      <picture className='AboutMe__emoji'>
-        <source media='(min-width:768px)' srcSet='/images/emoji.png' />
-        <source media='(min-width:425px)' srcSet='/images/emoji.png' />
-        <img src='/images/emoji.png' alt='Mi emoji Saludando' width='300' height='300' />
-      </picture>
-      {/* <figure className='AboutMe__emoji'>
-        <img src='/images/emoji.png' alt='Emoji' width='' />
-      </figure> */}
+      <h3>¡Bienvenido a mi portafolio!</h3>
       <div className='AboutMe__body'>
-        <p>Hola!</p>
         <p>
-          Soy antonio guzman y tengo 24 años, actualmente me encuentro estudiando la carrera de ingeniería en computación dentro de la universidad autónoma metropolitana (UAM-C)
-          Me apasiona el mundo del desarrollo web, mi principal enfoque es crear aplicaciones de alto impacto en la sociedad, mis metas como desarrollador web es especializarme dentro del área fullstack ya sea en una empresa que se ajuste a mis valores o diseñar una startup que sea innovadora en el ámbito académico.
-          Mis metas personales son perfeccionar el inglés, salir de mi zona de confort con nuevos retos.
+          Mi nombre es
+          {' '}
+          <strong>Antonio Guzmán</strong>
+          , soy Frontend developer con ReatcJS utilizando javascript y typescript como lenguajes base.
+          Soy estudiante de ingenieria de software en la Universidad Autónomo Metropolitana (UAM-C)
+          Me apasiona el mundo del desarrollo web y cada día aprender algo nuevo, mi principal enfoque es crear aplicaciones de alto impacto en la sociedad, mis metas como desarrollador web es especializarme dentro del área fullstack ya sea en una empresa o startup que se ajuste a mis valores.
+          Mis metas personales es epecializarme como frontend y poder crear algo que genere valor a la sociedad.
         </p>
         <p className='AboutMe__footer--contact'>
           Si quieres platicar un poco

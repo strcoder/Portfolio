@@ -14,11 +14,11 @@ const HomePage = () => {
     <>
       <Helmet>
         <meta charSet='utf-8' />
-        <title>Antonio Guzmán - Inicio</title>
+        <title>Inicio | Antonio Guzmán</title>
         <meta name='description' content='Antonio Guzmán Vilchis, desarrollador web con conocimientos en React, Typescript, NodeJS y mucho más.' />
       </Helmet>
       <PageNav />
-      <Hero />
+      {/* <Hero /> */}
       <AboutMe />
       <Skills />
       <ProjectList />
