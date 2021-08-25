@@ -1,11 +1,26 @@
 .Projects {
-  padding: 100px 0;
-  justify-items: center;
   gap: 50px;
+  padding: 25px;
+  padding: 100px 25px;
+}
+
+.Projects__header {
+  gap: 4px;
 }
 
 .Projects__body {
-  padding: 0 20px;
-  gap: 80px;
-  // grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+@media screen and (min-width: 768px) {
+  .Projects {
+    padding: 100px 10%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .Projects {
+    padding: 100px 20%;
+  }
 }

@@ -20,15 +20,14 @@ body {
       color: $color;
     }
     & .tag-#{$name} {
-      background-color: $color;
-      color: $soft-color;
-      font-weight: bold;
-      padding: 5px 5px;
-      border-radius: $border-radius;
       width: 90px;
+      padding: 5px 5px;
+      font-weight: bold;
+      color: $soft-color;
       justify-content: center;
-      // min-width: 40px;
-      font-size: $font-size-xs
+      background-color: $color;
+      font-size: $font-size-xs;
+      border-radius: $border-radius;
     }
     & .btn-#{$name} {
       @include button($soft-color, $color);
@@ -76,7 +75,6 @@ button, a {
   align-items: center;
   justify-self: center;
   justify-content: center;
-  // text-transform: capitalize;
   font-size: $font-size-base;
   font-family: $font-family-base;
   border-radius: $border-radius-lg;

@@ -13,11 +13,14 @@ const ProjectList = () => {
   const { projects } = useStateValue();
   return (
     <section className='Projects' id='Projects'>
-      <div className='Projects__body'>
-        <h2>Projects</h2>
+      <div className='Projects__header'>
+        <h2>Proyectos</h2>
+        <p>Ahora que ya me conoces un poco, dejeme presentarte mis proyectos personales en los cuales pongo en practica todo lo aprendido</p>
         {!projects && (
-          <h1>Loading...</h1>
+          <p><strong>Loading...</strong></p>
         )}
+      </div>
+      <div className='Projects__body'>
         {projects?.map((project: any, index: number) => (
           <React.Fragment key={project._id}>
             <ProjectCard

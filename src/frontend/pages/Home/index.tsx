@@ -1,6 +1,5 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import Hero from '../../components/Hero';
 import AboutMe from '../../components/AboutMe';
 import PageNav from '../../components/PageNav';
 import Skills from '../../components/Skills';
@@ -18,10 +17,9 @@ const HomePage = () => {
         <meta name='description' content='Antonio Guzmán Vilchis, desarrollador web con conocimientos en React, Typescript, NodeJS y mucho más.' />
       </Helmet>
       <PageNav />
-      {/* <Hero /> */}
       <AboutMe />
-      <Skills />
       <ProjectList />
+      <Skills />
       <MoreAboutMe />
       <Contact />
     </>
