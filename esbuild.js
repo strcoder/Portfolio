@@ -5,17 +5,18 @@ esbuild.build({
   minify: true,
   bundle: true,
   platform: 'node',
-  target: ['node14.15'],
-  outfile: 'dist/index.js',
+  target: ['node14.16'],
   plugins: [sassPlugin()],
+  outfile: 'dist/index.js',
   entryPoints: ['src/server/index.tsx'],
 }).catch((e) => console.error(e.message));
 
 esbuild.build({
   minify: true,
   bundle: true,
-  outfile: 'dist/public/app.js',
+  target: 'es6',
   plugins: [sassPlugin()],
+  outfile: 'dist/public/app.js',
   entryPoints: ['src/frontend/index.tsx'],
   define: {
     'process.env.NODE_ENV': '"production"',

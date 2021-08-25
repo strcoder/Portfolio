@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "dev": "nodemon dist/index",
-    "start": "node dist/index",
+    "dev": "nodemon",
     "build": "node esbuild"
   },
   "author": "@strcoder <aguzmanv09@gmail.com>",
