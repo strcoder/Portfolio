@@ -9,19 +9,19 @@ const Skills = () => {
       <h2>Skils</h2>
       <div className='flex'>
         <div className='Skill--item'>
-          <figure className='btn-soft'><FaReact /></figure>
+          <figure className='btn-primary'><FaReact /></figure>
           <p>ReactJS</p>
         </div>
         <div className='Skill--item'>
-          <figure className='btn-soft'><FaSass /></figure>
+          <figure className='btn-primary'><FaSass /></figure>
           <p>SASS</p>
         </div>
         <div className='Skill--item'>
-          <figure className='btn-soft'><FaNodeJs /></figure>
+          <figure className='btn-primary'><FaNodeJs /></figure>
           <p>NodeJs</p>
         </div>
         <div className='Skill--item'>
-          <figure className='btn-soft'><SiMongodb /></figure>
+          <figure className='btn-primary'><SiMongodb /></figure>
           <p>MongoDB</p>
         </div>
       </div>

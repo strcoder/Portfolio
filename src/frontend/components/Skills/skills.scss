@@ -2,10 +2,8 @@
 
 .Skills {
   gap: 25px;
-  justify-items: center;
-  background-color: $primary-color;
-  color: $soft-color;
   padding-top: 50px;
+  justify-items: center;
   & > .flex {
     flex-wrap: wrap;
     justify-content: center;
@@ -27,30 +25,28 @@
 }
 
 .Skills__body {
-  padding: 25px;
-  border-radius: $border-radius;
-  // box-shadow: $box-shadow-sm;
-  // background-color: $white;
-  max-width: 1000px;
   gap: 10px;
+  padding: 25px;
+  max-width: 1000px;
+  border-radius: $border-radius;
   & h6 {
-    font-size: $font-size-lg;
     color: $white;
+    font-size: $font-size-lg;
   }
   & > .flex {
-    padding-top: 25px;
     flex-wrap: wrap;
+    padding-top: 25px;
     align-items: flex-start;
   }
   & ul {
-    padding: 20px 0;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 20px;
     row-gap: 15px;
+    padding: 20px 0;
+    column-gap: 20px;
     align-items: flex-start;
+    grid-template-columns: repeat(2, 1fr);
   }
   & ul li {
-    color: $gray-500;
+    color: $gray-700;
   }
 }
 
