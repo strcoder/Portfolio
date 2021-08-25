@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "dev": "nodemon",
-    "build": "node esbuild"
+    "build": "node esbuild",
+    "start": "node dist/index.js"
   },
   "author": "@strcoder <aguzmanv09@gmail.com>",
   "license": "MIT",
