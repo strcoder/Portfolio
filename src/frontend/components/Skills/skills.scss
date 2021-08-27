@@ -1,19 +1,21 @@
 @import '../../scss/utils/variables';
 
 .Skills {
-  gap: 25px;
-  padding-top: 50px;
-  justify-items: center;
+  padding: 25px;
   & > .flex {
     flex-wrap: wrap;
     justify-content: center;
   }
 }
 
+.Skills__footer {
+  padding-top: 50px;
+}
+
 .Skill--item {
   gap: 25px;
-  justify-items: center;
   padding: 25px;
+  justify-items: center;
   & figure {
     width: 70px;
     height: 70px;
@@ -26,28 +28,7 @@
 
 .Skills__body {
   gap: 10px;
-  padding: 25px;
-  max-width: 1000px;
   border-radius: $border-radius;
-  & h6 {
-    color: $white;
-    font-size: $font-size-lg;
-  }
-  & > .flex {
-    flex-wrap: wrap;
-    padding-top: 25px;
-    align-items: flex-start;
-  }
-  & ul {
-    row-gap: 15px;
-    padding: 20px 0;
-    column-gap: 20px;
-    align-items: flex-start;
-    grid-template-columns: repeat(2, 1fr);
-  }
-  & ul li {
-    color: $gray-700;
-  }
 }
 
 @media screen and (min-width: 426px) {
@@ -57,9 +38,13 @@
 }
 
 @media screen and (min-width: 768px) {
-  .Skills__body {
-    & > .flex {
-      justify-content: space-between;
-    }
+  .Skills {
+    padding: 100px 10%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .Skills {
+    padding: 100px 20%;
   }
 }
