@@ -44,6 +44,24 @@
   gap: 25px;
   color: $black;
   transition: $transition-base;
+  border-radius: $border-radius;
+  & p {
+    padding: 25px;
+    padding-bottom: 0;
+  }
+  &.light.ibm,
+  &.light.platzi,
+  &.light.twitch {
+    background-color: $white;
+    border: 1px solid $gray-400;
+  }
+  &.dark.ibm,
+  &.dark.platzi,
+  &.dark.twitch {
+    color: $soft-color;
+    border: 1px solid #252525;
+    background-color: lighten($black, 8%);
+  }
 }
 
 .MoreAboutMe--links {
@@ -85,12 +103,8 @@
 
   .MoreAboutMe--item {
     max-width: 435px;
-    color: $black;
-    border-radius: $border-radius;
     height: max-content;
     & p {
-      padding: 25px;
-      padding-bottom: 0;
       grid-row-start: 1;
       grid-column-start: 1;
     }
@@ -98,15 +112,6 @@
       border: none;
       grid-row-start: 2;
       grid-column-start: 1;
-    }
-    &.twitch {
-      background-color: rgba($twitch, 0.5);
-    }
-    &.ibm {
-      background-color: rgba($ibm, 0.5);
-    }
-    &.platzi {
-      background-color: rgba($platzi, 0.5);
     }
   }
 }
