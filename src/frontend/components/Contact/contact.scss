@@ -1,10 +1,12 @@
 @import '../../scss/utils/variables';
 
 .Contact {
-  padding: 50px 25px;
-  max-width: 1000px;
-  justify-self: center;
   gap: 25px;
+  padding: 50px 25px;
+  justify-self: center;
+  & .btn-instagram {
+    display: none;
+  }
 }
 
 .MoreAboutMe--emoji {
@@ -18,9 +20,25 @@
   }
 }
 
+@media screen and (min-width: 375px) {
+  .Contact {
+    & .btn-instagram {
+      display: flex;
+    }
+  }
+}
+
 @media screen and (min-width: 768px) {
   .Contact {
+    row-gap: 20px;
+    column-gap: 50px;
+    padding: 50px 10%;
     grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .Contact {
+    padding: 50px 20%;
   }
 }
