@@ -16,7 +16,7 @@ const HomePage = () => {
         <title>Inicio | Antonio Guzmán</title>
         <meta name='description' content='Antonio Guzmán Vilchis, desarrollador web con conocimientos en React, Typescript, NodeJS y mucho más.' />
       </Helmet>
-      <PageNav />
+      {/* <PageNav /> */}
       <AboutMe />
       <ProjectList />
       <Skills />

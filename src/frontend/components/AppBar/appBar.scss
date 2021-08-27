@@ -2,7 +2,9 @@
 @import './../../scss/mixins/shadow';
 
 .AppBar {
-  padding: 5px 25px;
+  display: flex;
+  padding: 10px 25px;
+  justify-content: space-between;
   background-color: $primary-color;
   &.dark {
     background-color: $secondary-color;
@@ -16,8 +18,9 @@
 }
 
 .AppBar__header--logo {
-  width: 100px;
-  height: 40px;
+  width: 50px;
+  // width: 100px;
+  // height: 40px;
   padding: 0;
   & img {
     width: 100%;
@@ -28,170 +31,32 @@
 }
 
 .AppBar__body {
-  top: 0;
-  left: 0;
-  z-index: 10;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  transition: $transition-theme;
-  grid-template-rows: min-content;
-  align-content: center;
-  justify-content: center;
-  &.light {
-    background: rgba($dark-bg, 0.9);
+  display: flex;
+  & .btn-link-soft,
+  & .btn-soft span:first-child {
+    font-size: $font-size-lg;
   }
-  &.dark {
-    background: rgba($black, 0.9);
-  }
-  &.false {
+  & .btn-soft span:last-child {
     display: none;
   }
 }
 
-.AppBar__body--close {
-  width: 50px;
-  justify-self: flex-end;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  &.light {
-    background-color: $white;
-  }
-  &.dark {
-    color: $soft-color;
-    background-color: $black;
-  }
-}
-
-.AppBar__body--nav {
-  width: 90vw;
-  justify-self: center;
-  padding: 10px;
-  flex-wrap: wrap;
-  border-top-left-radius: $border-radius;
-  justify-content: space-evenly;
-  &.light {
-    background-color: $white;
-  }
-  &.dark {
-    color: $soft-color;
-    background-color: $black;
-  }
-}
-
-.AppBar__body--theme {
-  width: 90vw;
-  padding: 10px 0;
-  justify-items: center;
-  gap: 10px;
-  &.light {
-    background-color: $white;
-  }
-  &.dark {
-    color: $soft-color;
-    background-color: $black;
-  }
-}
-
-.AppBar__body--fans {
-  width: 90vw;
-  padding: 15px 20px;
-  border-bottom-left-radius: $border-radius;
-  border-bottom-right-radius: $border-radius;
-  & button {
-    width: 100%;
-  }
-  &.light {
-    background-color: $white;
-  }
-  &.dark {
-    color: $soft-color;
-    background-color: $black;
+@media screen and (min-width: 375px) {
+  .AppBar__header--logo {
+    width: 100px;
+    height: 40px;
   }
 }
 
 @media screen and (min-width: 768px) {
-  .AppBar__header {
-    & button {
-      display: none;
-    }
+  .AppBar {
+    justify-content: space-around;
   }
+
   .AppBar__body {
-    width: initial;
-    height: initial;
-    position: initial;
-    grid-row-start: 1;
-    grid-column-start: 2;
-    align-content: center;
-    justify-content: flex-end;
-    display: flex;
-    & .AppBar__body--close {
-      display: none;
-    }
-    &.light {
-      background: none;
-    }
-    &.dark {
-      background: none;
-    }
-    &.false {
+    & .btn-soft span:last-child {
       display: flex;
+      padding-left: 5px;
     }
-  }
-
-  .AppBar__body--nav {
-    width: initial;
-    border-top-left-radius: 0;
-    & a {
-      color: $white;
-      & span {
-        padding-left: 5px;
-      }
-    }
-    &.light {
-      background: none;
-    }
-    &.dark {
-      background: none;
-    }
-  }
-
-  .AppBar__body--theme {
-    width: initial;
-    & > p {
-      display: none;
-    }
-    &.light {
-      background: none;
-    }
-    &.dark {
-      color: $soft-color;
-      background: none;
-    }
-  }
-
-  .AppBar__body--fans {
-    width: initial;
-    & button {
-      width: 100%;
-    }
-    &.light {
-      background: none;
-    }
-    &.dark {
-      background: none;
-    }
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .AppBar__header {
-    justify-content: center;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .AppBar__body {
-    justify-content: center;
   }
 }
