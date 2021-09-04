@@ -1,33 +1,12 @@
 import React from 'react';
-import { FaArrowUp, FaGithub, FaHome, FaLink, FaReact, FaTwitch } from 'react-icons/fa';
-import { Link, useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
+import { FaGithub, FaLink, FaReact, FaTwitch } from 'react-icons/fa';
+import { useParams } from 'react-router-dom';
 import { useStateValue } from '../../context';
 import './project.scss';
 
-const PageNav = () => {
-  const { name } = useParams();
-  const { theme } = useStateValue();
-  return (
-    <aside className={`PageNav ${theme}`}>
-      <Link to='/' className='btn-outline-neon' title='Ir a la pagina principal' onClick={() => window.scroll(0, 0)}>
-        <FaHome size={25} />
-        <span>Pagina principal</span>
-      </Link>
-      <Link
-        to={`/project/${name}`}
-        title='Ir al inicio'
-        className='btn-outline-neon'
-        onClick={() => window.scroll(0, 0)}
-      >
-        <FaArrowUp size={25} />
-        <span>Inicio</span>
-      </Link>
-    </aside>
-  );
-};
-
 const Project = () => {
-  const { name } = useParams();
+  const { name } = useParams<{ name: string }>();
   const { theme, projects, socialMedia } = useStateValue();
   const project: any = projects.find((project: any) => project.name.toLowerCase() === name);
 
@@ -38,7 +17,11 @@ const Project = () => {
       )}
       {project && (
         <>
-          <PageNav />
+          <Helmet>
+            <meta charSet='utf-8' />
+            <title>{`Proyecto ${project.name} | Antonio Guzmán`}</title>
+            <meta name='description' content={project?.description} />
+          </Helmet>
           <section className='Project'>
             <div className={`ProjectHero ${theme}`}>
               <figure className='ProjectHero__image'>
@@ -47,11 +30,6 @@ const Project = () => {
               <div className='ProjectHero__info'>
                 <h1>{project?.name}</h1>
                 <p>{project?.description}</p>
-                {/* <div className='flex'>
-                  <Link to='/' className='btn-link-white'>
-                    <FaFacebookF />
-                  </Link>
-                </div> */}
               </div>
               <div className='ProjectHero__tags'>
                 <p><strong>Tecnologias</strong></p>
@@ -84,9 +62,6 @@ const Project = () => {
               </div>
             </div>
             <div className={`Project__footer ${theme}`}>
-              {/* <div className='Project__footer--header'>
-                <p>Ejemplo de texto</p>
-              </div> */}
               <div className='Project__footer--item'>
                 <p>Puedes estar actualizado con progreso del proyecto visitando el canal de twitch</p>
                 <a href={socialMedia.twitch} target='_blank' rel='noreferrer' className='btn-twitch'>
