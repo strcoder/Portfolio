@@ -4,19 +4,19 @@ import { FiCoffee } from 'react-icons/fi';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { PayPalButton } from 'react-paypal-button-v2';
 import { RiSunLine, RiMoonClearLine } from 'react-icons/ri';
-import { useStateValue } from '../../context';
-import setTheme from '../../context/actions';
 import Modal from '../Modal';
+import setTheme from '../../context/actions';
+import { useStateValue } from '../../context';
 import './appBar.scss';
 
 const AppBar = () => {
+  const [amount, setAmount] = useState(5);
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
   const [openModal, setOpenModal] = useState(false);
   const { theme, dispatch, paypal } = useStateValue();
   const [finishModal, setFinishModal] = useState(false);
   const newTheme = theme === 'light' ? 'dark' : 'light';
-  const [amount, setAmount] = useState(5);
 
   const paypalOptions = {
     clientId: paypal,
