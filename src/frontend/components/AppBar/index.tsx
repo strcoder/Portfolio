@@ -1,14 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiCoffee } from 'react-icons/fi';
+import { AiOutlineHeart } from 'react-icons/ai';
+import { PayPalButton } from 'react-paypal-button-v2';
 import { RiSunLine, RiMoonClearLine } from 'react-icons/ri';
 import { useStateValue } from '../../context';
-import './appBar.scss';
 import setTheme from '../../context/actions';
+import Modal from '../Modal';
+// import 'dotenv';
+import './appBar.scss';
 
 const AppBar = () => {
-  const { theme, dispatch } = useStateValue();
+  const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
+  const { theme, dispatch, paypal } = useStateValue();
+  const [finishModal, setFinishModal] = useState(false);
   const newTheme = theme === 'light' ? 'dark' : 'light';
+  const [amount, setAmount] = useState(5);
+
+  const paypalOptions = {
+    clientId: paypal,
+    intent: 'capture',
+    currency: 'USD',
+  };
+
+  const buttonStyles = {
+    layout: 'vertical',
+    shape: 'rect',
+  };
+
+  const handlePayment = ({ details, data }) => {
+    setOpenModal(false);
+    setFinishModal(true);
+    if (data?.status === 'COMPLETED') {
+      setError(false);
+      setSuccess(true);
+      return;
+    }
+    setError(true);
+    setSuccess(false);
+  };
 
   return (
     <header className={`AppBar ${theme}`}>
@@ -37,11 +69,96 @@ const AppBar = () => {
           type='button'
           title='Proximamente'
           className='btn-soft'
+          onClick={() => setOpenModal(true)}
         >
           <span><FiCoffee /></span>
           <span>Buy me a coffee</span>
         </button>
       </div>
+      <Modal
+        show={openModal}
+        onClose={setOpenModal}
+        title='Buy me a coffee'
+      >
+        <>
+          <p><strong>Que genial que quieras apoyarme, ¡Muchas gracias!</strong></p>
+          <p><strong>{`Total: $${amount} USD`}</strong></p>
+          <div className='CoffeModal__items flex'>
+            <button
+              type='button'
+              onClick={() => setAmount(5)}
+              className={amount === 5 ? 'btn-primary' : 'btn-white'}
+            >
+              <span>1</span>
+              <span className='btn-icon'><FiCoffee /></span>
+            </button>
+            <button
+              type='button'
+              onClick={() => setAmount(25)}
+              className={amount === 25 ? 'btn-primary' : 'btn-white'}
+            >
+              <span>5</span>
+              <span className='btn-icon'><FiCoffee /></span>
+            </button>
+            <button
+              type='button'
+              onClick={() => setAmount(50)}
+              className={amount === 50 ? 'btn-primary' : 'btn-white'}
+            >
+              <span>10</span>
+              <span className='btn-icon'><FiCoffee /></span>
+            </button>
+          </div>
+          <PayPalButton
+            amount={amount}
+            style={buttonStyles}
+            options={paypalOptions}
+            onSuccess={(details, data) => {
+              handlePayment({ details, data });
+            }}
+            onError={(err) => {
+              console.log(err);
+            }}
+          />
+        </>
+      </Modal>
+      <Modal
+        show={finishModal}
+        onClose={setFinishModal}
+        title={success ? 'Completado' : '¡Error!'}
+      >
+        <div className='CoffeModal__finish'>
+          {success && (
+            <>
+              <p>
+                <strong>¡Muchas gracias!</strong>
+                <span><AiOutlineHeart /></span>
+              </p>
+              <p>Se completo con exito la compra, gracias a ti este mes si podre comer</p>
+              <button
+                type='button'
+                className='form-button btn-primary'
+                onClick={() => setFinishModal(false)}
+              >
+                Continuar
+              </button>
+            </>
+          )}
+          {error && (
+            <>
+              <p className='text-danger'><strong>¡Ha ocurrido un error!</strong></p>
+              <p>Lamentablemete la compra no se completo pero no te preocupes lo puedes intentar nuevamente en unos cuantos minutos</p>
+              <button
+                type='button'
+                className='form-button btn-primary'
+                onClick={() => setFinishModal(false)}
+              >
+                Continuar
+              </button>
+            </>
+          )}
+        </div>
+      </Modal>
     </header>
   );
 };

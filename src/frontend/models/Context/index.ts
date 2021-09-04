@@ -12,6 +12,7 @@ export type ProviderProps = {
 
 export type ContextProps = {
   theme: string,
+  paypal: string,
   projects: object[],
   socialMedia: {
     github: string,

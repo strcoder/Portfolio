@@ -16,7 +16,6 @@ const AboutMe = () => {
           , soy Frontend developer con ReatcJS utilizando javascript y typescript como lenguajes base.
           Soy estudiante de ingenieria de software en la Universidad Autónomo Metropolitana (UAM-C)
           Me apasiona el mundo del desarrollo web y cada día aprender algo nuevo, mi principal enfoque es crear aplicaciones de alto impacto en la sociedad, mis metas como desarrollador web es especializarme dentro del área fullstack ya sea en una empresa o startup que se ajuste a mis valores.
-          Mis metas personales es epecializarme como frontend y poder crear algo que genere valor a la sociedad.
         </p>
         <p className='AboutMe__footer--contact'>
           Si quieres platicar un poco

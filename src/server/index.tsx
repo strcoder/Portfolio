@@ -4,7 +4,7 @@ import express from 'express';
 import cookieParser from 'cookie-parser';
 import { StaticRouter } from 'react-router-dom';
 import { renderToString } from 'react-dom/server';
-import { ENV, PORT } from './config';
+import { ENV, PORT, PAYPAL_ID } from './config';
 import { Provider } from '../frontend/context';
 import { preloadState } from './model/preloadState';
 import ServerApp from '../frontend/routes/ServerRoutes';
@@ -57,6 +57,7 @@ const renderApp = async (req: express.Request, res: express.Response) => {
     theme: theme || 'light',
     projects,
     socialMedia,
+    paypal: PAYPAL_ID,
   };
 
   const html = renderToString(

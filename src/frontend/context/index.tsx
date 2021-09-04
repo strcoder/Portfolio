@@ -5,6 +5,7 @@ import reducer from './reducers';
 
 export const Context = createContext<ContextProps>({
   theme: '',
+  paypal: '',
   projects: [],
   socialMedia: {
     github: 'https://github.com',

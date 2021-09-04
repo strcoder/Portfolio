@@ -1,25 +1,64 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { FaTimes } from 'react-icons/fa';
-import { useStateValue } from '../../context';
-import './modal.scss';
+import './styles.scss';
 
-const Modal = ({ children, isOpen, onClosed }) => {
-  const { theme } = useStateValue();
-  if (!isOpen) {
-    return null;
-  }
-  return ReactDOM.createPortal(
-    <div className='Modal'>
-      <div className={`Modal__container ${theme}`}>
-        <button type='button' className='btn-outline-danger' onClick={onClosed}>
-          <FaTimes />
-        </button>
-        {children}
+type ModalProps = {
+  show: boolean,
+  title: string,
+  onClose: Function,
+  children: React.ReactElement,
+}
+
+const Modal = ({ show, onClose, children, title }: ModalProps) => {
+  const [isBrowser, setIsBrowser] = useState(false);
+
+  useEffect(() => {
+    setIsBrowser(true);
+  }, []);
+
+  const handleCloseClick = (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+    onClose();
+  };
+
+  const modalContent = show ? (
+    <section className='Modal'>
+      <button
+        type='button'
+        className='Modal__close'
+        onClick={handleCloseClick}
+      >
+        close
+      </button>
+      <div className='ModalWrap'>
+        <div className='ModalWrap__header'>
+          {title && (
+            <p className='single-line'><strong>{title}</strong></p>
+          )}
+          <button
+            type='button'
+            title='Cerrar modal'
+            onClick={handleCloseClick}
+            className='btn-link-danger'
+          >
+            <FaTimes size={20} />
+          </button>
+        </div>
+        <main className='ModalWrap__main'>
+          {children}
+        </main>
       </div>
-    </div>,
-    document.getElementById('modal'),
-  );
+    </section>
+  ) : null;
+
+  if (isBrowser) {
+    return ReactDOM.createPortal(
+      modalContent,
+      document.getElementById('modal'),
+    );
+  }
+  return null;
 };
 
 export default Modal;

@@ -1,6 +1,7 @@
 export type preloadState = {
   theme: string,
   projects: object[],
+  paypal: string,
   socialMedia: {
     github: string,
     twitch: string,

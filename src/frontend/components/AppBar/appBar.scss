@@ -41,6 +41,33 @@
   }
 }
 
+.CoffeModal__items {
+  justify-content: space-around;
+  & button.btn-white {
+    color: $primary-color;
+    border: 1px solid rgba($black, 0.2);
+  }
+  & span.btn-icon {
+    padding-left: 5px;
+    font-size: $font-size-lg;
+  }
+}
+
+.CoffeModal__finish {
+  gap: 8px;
+  & p {
+    display: flex;
+    max-width: 300px;
+  }
+  p span {
+    padding-left: 5px;
+    font-size: $font-size-lg;
+  }
+  & button {
+    margin: 20px 0;
+  }
+}
+
 @media screen and (min-width: 375px) {
   .AppBar__header--logo {
     width: 100px;
