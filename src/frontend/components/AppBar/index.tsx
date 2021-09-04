@@ -7,7 +7,6 @@ import { RiSunLine, RiMoonClearLine } from 'react-icons/ri';
 import { useStateValue } from '../../context';
 import setTheme from '../../context/actions';
 import Modal from '../Modal';
-// import 'dotenv';
 import './appBar.scss';
 
 const AppBar = () => {
@@ -87,7 +86,11 @@ const AppBar = () => {
             <button
               type='button'
               onClick={() => setAmount(5)}
-              className={amount === 5 ? 'btn-primary' : 'btn-white'}
+              className={
+                amount === 5 ?
+                  theme === 'light' ? 'btn-primary' : 'btn-tertiary' :
+                  theme === 'light' ? 'btn-white' : 'btn-black'
+              }
             >
               <span>1</span>
               <span className='btn-icon'><FiCoffee /></span>
@@ -95,7 +98,11 @@ const AppBar = () => {
             <button
               type='button'
               onClick={() => setAmount(25)}
-              className={amount === 25 ? 'btn-primary' : 'btn-white'}
+              className={
+                amount === 25 ?
+                  theme === 'light' ? 'btn-primary' : 'btn-tertiary' :
+                  theme === 'light' ? 'btn-white' : 'btn-black'
+              }
             >
               <span>5</span>
               <span className='btn-icon'><FiCoffee /></span>
@@ -103,7 +110,11 @@ const AppBar = () => {
             <button
               type='button'
               onClick={() => setAmount(50)}
-              className={amount === 50 ? 'btn-primary' : 'btn-white'}
+              className={
+                amount === 50 ?
+                  theme === 'light' ? 'btn-primary' : 'btn-tertiary' :
+                  theme === 'light' ? 'btn-white' : 'btn-black'
+              }
             >
               <span>10</span>
               <span className='btn-icon'><FiCoffee /></span>

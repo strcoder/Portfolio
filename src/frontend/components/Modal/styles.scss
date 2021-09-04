@@ -25,11 +25,17 @@
 .ModalWrap {
   grid-row-start: 1;
   grid-column-start: 1;
-  background-color: $white;
   border-radius: $border-radius;
-  border: $border-width solid $border-color;
   & > button {
     justify-self: flex-end;
+  }
+  &.light {
+    background-color: $white;
+    border: $border-width solid $border-color;
+  }
+  &.dark {
+    background-color: lighten($black, 4%);
+    border: $border-width solid rgba($black, 0.5);
   }
 }
 
@@ -37,16 +43,22 @@
   padding: 10px;
   display: flex;
   align-items: center;
-  background-color: $gray-200;
   justify-content: space-between;
   border-radius: $border-radius;
-  border-bottom: $border-width solid $border-color;
   & p {
     max-width: 230px;
     padding-right: 10px;
   }
   & button {
     padding: 0;
+  }
+  &.light {
+    background-color: $gray-200;
+    border-bottom: $border-width solid $border-color;
+  }
+  &.dark {
+    background-color: $black;
+    border-bottom: $border-width solid rgba($black, 0.5);
   }
 }
 

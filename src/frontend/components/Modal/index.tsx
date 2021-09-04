@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { FaTimes } from 'react-icons/fa';
+import { useStateValue } from '../../context';
 import './styles.scss';
 
 type ModalProps = {
@@ -11,6 +12,7 @@ type ModalProps = {
 }
 
 const Modal = ({ show, onClose, children, title }: ModalProps) => {
+  const { theme } = useStateValue();
   const [isBrowser, setIsBrowser] = useState(false);
 
   useEffect(() => {
@@ -31,8 +33,8 @@ const Modal = ({ show, onClose, children, title }: ModalProps) => {
       >
         close
       </button>
-      <div className='ModalWrap'>
-        <div className='ModalWrap__header'>
+      <div className={`ModalWrap ${theme}`}>
+        <div className={`ModalWrap__header ${theme}`}>
           {title && (
             <p className='single-line'><strong>{title}</strong></p>
           )}
