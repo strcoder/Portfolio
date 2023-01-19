@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "name": "portfolio",
+  "outputDirectory": "dist",
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "routes": [{ "src": "/(.*)", "dest": "/src/index.ts" }],
+  "builds": [{ "src": "/esbuild.js", "use": "@vercel/node" }]
+}
