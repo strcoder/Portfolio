@@ -4,6 +4,6 @@
   "outputDirectory": "dist",
   "buildCommand": "npm run build",
   "installCommand": "npm install",
-  "routes": [{ "src": "/(.*)", "dest": "/esbuild.js" }],
-  "builds": [{ "src": "/esbuild.js", "use": "@vercel/node" }]
+  "builds": [{ "src": "/src/index.ts", "use": "@vercel/node" }],
+  "routes": [{ "src": "/(.*)", "dest": "/src/index.ts" }]
 }
