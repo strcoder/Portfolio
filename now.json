@@ -1,0 +1,6 @@
+{
+  "name": "portfolio",
+  "version": 2,
+  "builds": [{ "src": "/esbuild.js", "use": "@vercel/node" }],
+  "routes": [{ "src": "/(.*)", "dest": "/esbuild.js" }]
+}
