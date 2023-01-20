@@ -2,13 +2,6 @@
   "version": 2,
   "name": "portfolio",
   "outputDirectory": "dist",
-  "builds": [{ "src": "/src/server/index.tsx", "use": "@vercel/node" }],
-  "routes": [
-    { "src": "/(.*)", "dest": "/src/server/index.tsx" }
-  ],
-  "functions": {
-    "src/server/index.tsx": {
-      "includeFiles": "src/frontend/**"
-    }
-  }
+  "builds": [{ "src": "/dist/index.js", "use": "@vercel/node" }],
+  "routes": [{ "src": "/(.*)", "dest": "/dist/index.js" }]
 }
