@@ -56,7 +56,7 @@ const AppBar = () => {
       </div>
 
       <div className='AppBar__body'>
-        <button
+        {/* <button
           type='button'
           title='Cambiar tema'
           className='btn-link-soft'
@@ -72,7 +72,7 @@ const AppBar = () => {
         >
           <span><FiCoffee /></span>
           <span>Buy me a coffee</span>
-        </button>
+        </button> */}
       </div>
       <Modal
         show={openModal}

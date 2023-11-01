@@ -5,6 +5,7 @@ import Layout from '../components/Layout';
 import HomePage from '../pages/Home';
 import Project from '../pages/Project';
 import NotFound from '../pages/NotFound';
+import InConstruction from '../pages/InConstruction';
 // import Portfolio from '../pages/Portfolio';
 
 const App = () => {
@@ -18,9 +19,9 @@ const App = () => {
     <BrowserRouter>
       <Layout>
         <Switch>
-          <Route exact path='/' component={HomePage} />
-          <Route exact path='/project/:name' component={Project} />
-          <Route exact component={NotFound} />
+          {/* <Route exact path='/' component={HomePage} />
+          <Route exact path='/project/:name' component={Project} /> */}
+          <Route exact component={InConstruction} />
         </Switch>
       </Layout>
     </BrowserRouter>

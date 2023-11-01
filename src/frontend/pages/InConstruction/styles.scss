@@ -1,0 +1,16 @@
+@import '../../scss/utils/variables.scss';
+
+.InCostruction {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  min-height: 320px;
+  align-content: center;
+  justify-items: center;
+}
+
+.InCostruction--icon {
+  font-size: 5rem;
+  color: $primary-color;
+}

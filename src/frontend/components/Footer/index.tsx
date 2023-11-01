@@ -41,7 +41,7 @@ const Footer = () => {
     <footer className={`Footer ${theme}`}>
       <div className={`Footer__copyright ${theme}`}>
         <p>&copy; Antonio Guzman - 2021</p>
-        <a
+        {/* <a
           target='_blank'
           rel='noreferrer'
           className='btn-link-soft'
@@ -55,7 +55,7 @@ const Footer = () => {
           onClick={() => setOpenModal(true)}
         >
           Buy me a coffee
-        </button>
+        </button> */}
       </div>
       <Modal
         show={openModal}
