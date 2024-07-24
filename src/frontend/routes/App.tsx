@@ -1,31 +1,27 @@
 import React from 'react';
-import { Switch, Route, BrowserRouter } from 'react-router-dom';
-import { useStateValue } from '../context';
+import { Route, Routes } from 'react-router-dom';
+import { getCookie, ThemeProvider, useTheme } from 'eduli-ui';
+
 import Layout from '../components/Layout';
 import HomePage from '../pages/Home';
 import Project from '../pages/Project';
 import NotFound from '../pages/NotFound';
 import InConstruction from '../pages/InConstruction';
+import 'eduli-ui/lib/index.css';
 // import Portfolio from '../pages/Portfolio';
 
 const App = () => {
-  const { theme } = useStateValue();
-  if (typeof window !== 'undefined' && typeof document !== 'undefined') {
-    const body = document.body.classList;
-    theme === 'light' ? body.remove('dark') : body.add(theme);
-    theme === 'dark' ? body.remove('light') : body.add(theme);
-  }
   return (
-    <BrowserRouter>
+    <ThemeProvider>
       <Layout>
-        <Switch>
-          {/* <Route exact path='/' component={HomePage} />
-          <Route exact path='/project/:name' component={Project} /> */}
-          <Route exact component={InConstruction} />
-        </Switch>
+        <Routes>
+          {/* <Route exact path='/' element={<HomePage />} />
+          <Route exact path='/project/:name' element={<Project />} /> */}
+          <Route path='*' element={<InConstruction />} />
+        </Routes>
       </Layout>
-    </BrowserRouter>
+    </ThemeProvider>
   );
-};
+}
 
 export default App;

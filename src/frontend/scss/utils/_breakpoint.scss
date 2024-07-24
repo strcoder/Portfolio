@@ -1,0 +1,41 @@
+//* Screen breackpoints *//
+
+//* Width breackpoints *//
+$breakpoints-width-xxl: 2560px;
+$breakpoints-width-xl: 1920px;
+$breakpoints-width-lg: 1440px;
+$breakpoints-width-md: 1024px;
+$breakpoints-width-sm: 768px;
+$breakpoints-width-mxs: 525px;
+$breakpoints-width-xs: 425px;
+$breakpoints-width-xxs: 375px;
+
+//* Height breackpoints *//
+$breakpoints-height-xxl: 1440px;
+$breakpoints-height-xl: 1080px;
+$breakpoints-height-lg: 810px;
+$breakpoints-height-md: 576px;
+$breakpoints-height-sm: 432px;
+$breakpoints-height-xs: 320px;
+$breakpoints-height-xxs: 240px;
+
+$breakpoints-width: (
+  'xxl': $breakpoints-width-xxl,
+  'xl': $breakpoints-width-xl,
+  'lg': $breakpoints-width-lg,
+  'md': $breakpoints-width-md,
+  'sm': $breakpoints-width-sm,
+  'mxs': $breakpoints-width-mxs,
+  'xs': $breakpoints-width-xs,
+  'xxs': $breakpoints-width-xxs,
+);
+
+$breakpoints-height: (
+  'xxl': $breakpoints-height-xxl,
+  'xl': $breakpoints-height-xl,
+  'lg': $breakpoints-height-lg,
+  'md': $breakpoints-height-md,
+  'sm': $breakpoints-height-sm,
+  'xs': $breakpoints-height-xs,
+  'xxs': $breakpoints-height-xxs,
+);

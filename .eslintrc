@@ -221,6 +221,8 @@
       "required": {
         "some": [ "nesting", "id"  ]
       }
-    }]
+    }],
+    "named-components": "arrow-function",
+    "unnamed-components": "arrow-function"
   }
 }

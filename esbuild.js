@@ -5,7 +5,7 @@ esbuild.build({
   minify: true,
   bundle: true,
   platform: 'node',
-  target: ['node14.16'],
+  target: ['node20.10'],
   plugins: [sassPlugin()],
   outfile: 'dist/index.js',
   entryPoints: ['src/server/index.tsx'],
