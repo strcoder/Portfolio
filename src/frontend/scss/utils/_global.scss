@@ -1,101 +1,52 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
+:root {
+  --primary-color: #042454;
+  --secondary-color: #02132d;
+  --tertiary-color: #0056B3;
+  --accent-color: #AC1459;
+  --success-color: #1C7414;
+  --warning-color: #FCC408;
+  --danger-color: #8C0404;
+  --dark-color: #041721;
+  --gray-color: #313840;
+  --grey-color: #727787;
+
+  // //* Color scheme: light-hover */
+  // --light-bg-hover: darken(var(--light-bg), 10);
+  // --primary-color-hover: darken(var(--primary-color), 5);
+  // --secondary-color-hover: lighten(var(--secondary-color), 10);
+  // --tertiary-color-hover: darken(var(--tertiary-color), 10);
+  // --accent-color-hover: darken(var(--accent-color), 10);
+  // --success-color-hover: darken(var(--success-color), 20);
+  // --warning-color-hover: darken(var(--warning-color), 10);
+  // --danger-color-hover: darken(var(--danger-color), 10);
+  // --dark-color-hover: darken(var(--dark-color), 10);
+  // --gray-color-hover: darken(var(--gray-color), 10);
+  // --grey-color-hover: darken(var(--grey-color), 10);
+  // --soft-color-hover: darken(var(--soft-color), 10);
+  // --disabled-color-hover: darken(var(--disabled-color), 10);
+  // --border-color-hover: darken(var(--border-color), 10);
+  // --border-light-color-hover: darken(var(--border-color-light), 10);
+  // --text-color-hover: darken(var(--text-color), 10);
+  // --text-contrast-color-hover: darken(var(--text-contrast-color), 10);
+  // --text-disabled-color-hover: darken(var(--text-disabled-color), 10);
+  // --shadow-color-hover: darken(var(--shadow-color), 10);
 }
 
-html {
-  scroll-behavior: smooth;
-}
+// * {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+//   -moz-box-sizing: border-box;
+// }
 
-body {
-  transition: $transition-theme;
-  font-family: $font-family-base;
-  @each $name, $color in $theme-colors {
-    & .bg-#{$name} {
-      background-color: $color;
-    }
-    & .text-#{$name} {
-      color: $color;
-    }
-    & .tag-#{$name} {
-      width: 90px;
-      padding: 5px 5px;
-      font-weight: bold;
-      color: $soft-color;
-      justify-content: center;
-      background-color: $color;
-      font-size: $font-size-xs;
-      border-radius: $border-radius;
-    }
-    & .btn-#{$name} {
-      @include button($soft-color, $color);
-    }
-    & .btn-link-#{$name} {
-      @include buttonLink($color);
-    }
-    & .btn-outline-#{$name} {
-      @include buttonOutline($color, $soft-color);
-    }
-  }
-}
+// html {
+//   scroll-behavior: smooth;
+// }
 
-body.light {
-  color: $dark-bg;
-  background: $light-bg;
-}
-
-body.dark {
-  color: $light-bg;
-  background: $dark-bg;
-  & .form-input {
-    color: $white;
-    background-color: #3b3d40;
-    &::placeholder {
-      color: $gray-200;
-    }
-  }
-  & .form-textarea {
-    color: $white;
-    background-color: #3b3d40;
-    &::placeholder {
-      color: $gray-200;
-    }
-  }
-}
-
-button, a {
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  padding: 10px 14px;
-  text-align: center;
-  align-self: center;
-  align-items: center;
-  justify-self: center;
-  justify-content: center;
-  font-size: $font-size-base;
-  font-family: $font-family-base;
-  border-radius: $border-radius-lg;
-  transition: $transition-base;
-  &:hover {
-    transform: translateY(-2px);
-  }
-}
-
-.btn {
-  @include button();
-}
-
-.btn-link, .light__btn-link {
-  @include buttonLink();
-}
-
-.btn-outline {
-  @include buttonOutline();
-}
-
+// body {
+//   transition: $transition-theme;
+//   font-family: $font-family-base;
+// }
 
 .box-shadow {
   box-shadow: $box-shadow;
@@ -107,24 +58,4 @@ button, a {
 
 .form-search {
   @include formSearch();
-}
-
-body .btn-soft {
-  color: $dark-bg;
-}
-
-.btn-disable {
-  cursor: default;
-  &:hover {
-    transform: none;
-  }
-}
-
-body .btn-outline-white:hover,
-body .btn-outline-soft:hover {
-  color: $black;
-}
-
-body .btn-platzi {
-  color: #273B47;
 }

@@ -5,6 +5,7 @@ import Skills from '../../components/Skills';
 import ProjectList from '../../components/ProjectList';
 import MoreAboutMe from '../../components/MoreAboutMe';
 import Contact from '../../components/Contact';
+import Experience from '../../components/Experience';
 import './home.scss';
 
 const HomePage = () => {
@@ -16,10 +17,11 @@ const HomePage = () => {
         <meta name='description' content='Antonio Guzmán Vilchis, desarrollador web con conocimientos en React, Typescript, NodeJS y mucho más.' />
       </Helmet>
       <AboutMe />
-      <ProjectList />
+      <Experience />
+      {/* <ProjectList /> */}
       <Skills />
       <MoreAboutMe />
-      <Contact />
+      {/* <Contact /> */}
     </>
   );
 };

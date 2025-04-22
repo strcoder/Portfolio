@@ -2,6 +2,17 @@
 
 .Skills {
   padding: 25px;
+
+  & h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  & h3 span {
+    display: flex;
+  }
+
   & > .flex {
     flex-wrap: wrap;
     justify-content: center;
@@ -9,13 +20,13 @@
 }
 
 .Skills__footer {
-  padding-top: 50px;
+  gap: 8px;
+  padding-top: 24px;
 }
 
 .Skill--item {
-  gap: 25px;
-  padding: 25px;
   justify-items: center;
+
   & figure {
     width: 70px;
     height: 70px;
@@ -29,12 +40,6 @@
 .Skills__body {
   gap: 10px;
   border-radius: $border-radius;
-}
-
-@media screen and (min-width: 426px) {
-  .Skill--item  {
-    padding: 25px 50px;
-  }
 }
 
 @media screen and (min-width: 768px) {

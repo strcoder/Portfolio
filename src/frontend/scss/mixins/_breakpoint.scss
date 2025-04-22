@@ -1,0 +1,47 @@
+@use '../utils/breakpoint' as *;
+
+@mixin breakpoint($breakpoint) {
+  @if $breakpoint == 'xxs' {
+    @media (min-width: $breakpoints-width-xxs) {
+      @content;
+    }
+  } @else if $breakpoint == 'xs' {
+    @media (min-width: $breakpoints-width-xs) {
+      @content;
+    }
+  } @else if $breakpoint == 'mxs' {
+    @media (min-width: $breakpoints-width-mxs) {
+      @content;
+    }
+  } @else if $breakpoint == 'sm' {
+    @media (min-width: $breakpoints-width-sm) {
+      @content;
+    }
+  } @else if $breakpoint == 'md' {
+    @media (min-width: $breakpoints-width-md) {
+      @content;
+    }
+  } @else if $breakpoint == 'lg' {
+    @media (min-width: $breakpoints-width-lg) {
+      @content;
+    }
+  } @else if $breakpoint == 'xl' {
+    @media (min-width: $breakpoints-width-xl) {
+      @content;
+    }
+  } @else if $breakpoint == 'xxl' {
+    @media (min-width: $breakpoints-width-xxl) {
+      @content;
+    }
+  } @else if $breakpoint == 'mobile-portrait' {
+    @media (orientation: portrait) and (max-width: 768px) {
+      @content;
+    }
+  } @else if $breakpoint == 'mobile-landscape' {
+    @media (orientation: landscape) and (max-width: 1024px) and (max-height: 768px) {
+      @content;
+    }
+  } @else {
+    @error 'No value could be retrieved for ' + $breakpoint;
+  }
+}
