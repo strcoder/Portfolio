@@ -1,0 +1,15 @@
+.NotFound {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 88vh;
+  min-height: 320px;
+  text-align: center;
+  align-content: center;
+
+  & a {
+    display: grid;
+    width: 100%;
+    align-self: center;
+  }
+}
