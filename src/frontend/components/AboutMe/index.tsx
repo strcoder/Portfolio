@@ -38,10 +38,10 @@ const AboutMe = () => {
           cada proyecto en el que participo.
         </Typography>
         <Typography className='AboutMe__footer--contact'>
-          Si quieres platicar un poco
+          Si quieres platicar un poco contactame.
           {' '}
-          <Link href='#Contact' color='white' title='Ponte en contacto conmigo'>
-            contactame.
+          <Link href='mailto:aguzmanv09@gmail.com'>
+            aguzmanv09@gmail.com
           </Link>
         </Typography>
       </Box>
