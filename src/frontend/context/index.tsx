@@ -20,11 +20,11 @@ export const Context = createContext<ContextProps>({
 
 export const Provider = ({ children, initialState = {} }: ProviderProps) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  return (
-    <Context.Provider value={{ ...state, dispatch }}>
-      {children}
-    </Context.Provider>
+  const contextValue = React.useMemo(
+    () => ({ ...state, dispatch }),
+    [state, dispatch],
   );
+  return <Context.Provider value={contextValue}>{children}</Context.Provider>;
 };
 
 export const useStateValue = () => useContext(Context);

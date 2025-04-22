@@ -1,4 +1,10 @@
+/* eslint-disable no-unused-vars */
 import { Dispatch } from 'react';
+
+export enum Theme {
+  light = 'light',
+  dark = 'dark',
+}
 
 type Actions = {
   type: string,
@@ -23,4 +29,18 @@ export type ContextProps = {
     instagram: string,
   },
   dispatch: Dispatch<Actions>,
+}
+
+export type ThemeContextProps = {
+  theme: Theme,
+  switchTheme: () => void,
+  changeTheme: (theme: Theme) => void,
+  // dispatch: Dispatch<Actions>,
+}
+
+export type ThemeProviderProps = {
+  children: React.ReactElement,
+  initialState: {
+    theme: Theme,
+  },
 }
