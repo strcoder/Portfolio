@@ -1,0 +1,41 @@
+.AboutMe {
+  padding: 20px;
+}
+
+.AboutMe__body {
+  padding-top: 16px;
+}
+
+.AboutMe__body--description {
+  padding: 8px 0;
+}
+
+.AboutMe__footer--contact {
+  display: initial;
+
+  & a {
+    padding: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .AboutMe {
+    padding: 25px 10%;
+  }
+
+  .AboutMe__footer {
+    justify-content: flex-end;
+  }
+}
+
+@media (min-width: 1024px) {
+  .AboutMe {
+    padding: 50px 20%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .AboutMe {
+    padding: 100px 20%;
+  }
+}
