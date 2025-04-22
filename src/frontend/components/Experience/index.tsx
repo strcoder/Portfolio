@@ -79,7 +79,7 @@ const Experience = () => {
               </Box>
               <Button
                 variant='text'
-                color='white'
+                color='accent'
                 onClick={() => handleShowMoreInfo('Aeromexico')}
               >
                 Ver menos
@@ -124,7 +124,7 @@ const Experience = () => {
               </Box>
               <Button
                 variant='text'
-                color='white'
+                color='accent'
                 onClick={() => handleShowMoreInfo('Cumplo')}
               >
                 Ver menos
@@ -166,7 +166,7 @@ const Experience = () => {
               </Box>
               <Button
                 variant='text'
-                color='white'
+                color='accent'
                 onClick={() => handleShowMoreInfo('MonteDePiedad')}
               >
                 Ver menos
@@ -211,7 +211,7 @@ const Experience = () => {
               </Box>
               <Button
                 variant='text'
-                color='white'
+                color='accent'
                 onClick={() => handleShowMoreInfo('BBVA')}
               >
                 Ver menos
