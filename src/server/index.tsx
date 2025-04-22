@@ -2,12 +2,12 @@ import React from 'react';
 import helmet from 'helmet';
 import express from 'express';
 import cookieParser from 'cookie-parser';
-import { StaticRouter } from 'react-router-dom';
-import { renderToString } from 'react-dom/server';
+import { StaticRouter } from 'react-router-dom/server';
+import * as ReactDOMServer from 'react-dom/server';
 import { ENV, PORT, PAYPAL_ID } from './config';
 import { Provider } from '../frontend/context';
 import { preloadState } from './model/preloadState';
-import ServerApp from '../frontend/routes/ServerRoutes';
+import ServerApp from '../frontend/routes/App';
 import { getData } from './controller/data';
 import Routes from './routes';
 
@@ -57,18 +57,18 @@ const renderApp = async (req: express.Request, res: express.Response) => {
     theme: theme || 'light',
     projects,
     socialMedia,
-    paypal: PAYPAL_ID,
+    paypal: PAYPAL_ID || '',
   };
 
-  const html = renderToString(
+  const html = ReactDOMServer.renderToString(
     <Provider initialState={initialState}>
-      <StaticRouter location={req.url} context={{}}>
+      <StaticRouter location={req.url}>
         <ServerApp />
       </StaticRouter>
     </Provider>,
   );
   res
-    .set('Content-Security-Policy', "default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'")
+    // .set('Content-Security-Policy', "default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'")
     .send(setResponse(html, initialState));
 };
 
