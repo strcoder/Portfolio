@@ -1,0 +1,25 @@
+@use '../../scss/utils/variables' as *;
+@use '../../scss/mixins/shadow' as *;
+@use '../../scss/mixins/breakpoint' as *;
+
+
+.Footer {
+  @include shadow($primary-color);
+  position: relative;
+  bottom: 0;
+}
+
+.Footer__copyright {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 16px;
+
+  @include breakpoint('md') {
+    grid-column-end: span 2;
+  }
+
+  @include breakpoint('lg') {
+    justify-self: stretch;
+  }
+}
