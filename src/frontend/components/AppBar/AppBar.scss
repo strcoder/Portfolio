@@ -1,0 +1,30 @@
+@use '../../scss/mixins/breakpoint' as *;
+
+.AppBar {
+  justify-content: space-around;
+}
+
+.AppBar__header {
+  align-items: center;
+  justify-content: space-around;
+}
+
+.AppBar__body {
+  align-items: center;
+}
+
+.AppBar__header--logo picture {
+  width: 50px;
+  padding: 0;
+
+  @include breakpoint('xxs') {
+    width: 100px;
+    height: 40px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .AppBar {
+    justify-content: space-around;
+  }
+}
