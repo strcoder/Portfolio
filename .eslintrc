@@ -195,6 +195,7 @@
     "react/self-closing-comp": 2,
     "react/sort-comp": 0,
     "react/jsx-wrap-multilines": 2,
+    "react/function-component-definition": [2, { "namedComponents": "arrow-function", "unnamedComponents": "arrow-function" }],
     "semi-spacing": 0,
     "sort-vars": 0,
     "space-before-blocks": [2, "always"],
