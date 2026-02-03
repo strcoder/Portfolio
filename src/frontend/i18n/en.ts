@@ -1,6 +1,13 @@
 import { Translations } from './es';
 
 export const en: Translations = {
+  // SEO
+  seo: {
+    title: 'Antonio Guzmán | Senior Fullstack Developer & AI/ML Engineer',
+    description: 'Senior Fullstack Developer with 5+ years of experience in React, Next.js, Node.js, and NestJS. Specialized in scalable web applications, microfrontends architecture, and AI/ML integration. Available for remote work.',
+    keywords: 'Antonio Guzmán, Fullstack Developer, React Developer, Next.js, Node.js, NestJS, TypeScript, JavaScript, AI Engineer, ML Engineer, Mexico, Remote Developer',
+  },
+
   // Header/Hero
   hero: {
     welcome: 'Welcome to my portfolio!',

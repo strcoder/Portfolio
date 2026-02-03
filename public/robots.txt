@@ -1,0 +1,15 @@
+# Robots.txt for Antonio Guzmán Portfolio
+# https://antonioguzman.dev
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://antonioguzman.dev/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Block specific paths if needed
+Disallow: /api/
+Disallow: /*.json$

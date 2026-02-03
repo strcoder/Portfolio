@@ -1,4 +1,11 @@
 export const es = {
+  // SEO
+  seo: {
+    title: 'Antonio Guzmán | Senior Fullstack Developer & AI/ML Engineer',
+    description: 'Senior Fullstack Developer con 5+ años de experiencia en React, Next.js, Node.js y NestJS. Especializado en aplicaciones web escalables, arquitectura de microfrontends e integración de IA/ML. Disponible para trabajo remoto.',
+    keywords: 'Antonio Guzmán, Fullstack Developer, React Developer, Next.js, Node.js, NestJS, TypeScript, JavaScript, AI Engineer, ML Engineer, México, Remote Developer',
+  },
+
   // Header/Hero
   hero: {
     welcome: 'Bienvenido a mi portafolio!',
