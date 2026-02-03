@@ -2,9 +2,8 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import AboutMe from '../../components/AboutMe';
 import Skills from '../../components/Skills';
-import ProjectList from '../../components/ProjectList';
+import FeaturedProjects from '../../components/FeaturedProjects';
 import MoreAboutMe from '../../components/MoreAboutMe';
-import Contact from '../../components/Contact';
 import Experience from '../../components/Experience';
 import './home.scss';
 
@@ -18,10 +17,9 @@ const HomePage = () => {
       </Helmet>
       <AboutMe />
       <Experience />
-      {/* <ProjectList /> */}
+      <FeaturedProjects />
       <Skills />
       <MoreAboutMe />
-      {/* <Contact /> */}
     </>
   );
 };
