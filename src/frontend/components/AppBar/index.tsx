@@ -2,9 +2,11 @@ import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { Box, Image, Link } from 'eduli-ui';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import { useStateValue } from '../../context';
 import './AppBar.scss';
 
 export const AppBar = () => {
+  const { t } = useStateValue();
 
   return (
     <Box component='header' className='AppBar' display='flex' bgColor='primary'>
@@ -33,7 +35,7 @@ export const AppBar = () => {
           rel='noreferrer'
           href='https://github.com/strcoder'
           color='white'
-          title='Visitame en Github'
+          title={t.nav.visitGithub}
         >
           <FaGithub />
         </Link>
@@ -42,7 +44,7 @@ export const AppBar = () => {
           rel='noreferrer'
           href='https://www.linkedin.com/in/agvcoder/'
           color='white'
-          title='Visitame en Linkedin'
+          title={t.nav.visitLinkedin}
         >
           <FaLinkedinIn />
         </Link>

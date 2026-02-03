@@ -8,9 +8,14 @@ export const es = {
 
   // Header/Hero
   hero: {
-    welcome: 'Bienvenido a mi portafolio!',
+    welcome: '¡Bienvenido a mi portafolio!',
     title: "I'm Web Developer",
     subtitle: 'Senior Fullstack Developer | AI/ML Engineer',
+    visitFacebook: 'Visítame en Facebook',
+    visitTwitter: 'Visítame en Twitter',
+    visitInstagram: 'Visítame en Instagram',
+    visitLinkedin: 'Visítame en LinkedIn',
+    visitTwitch: 'Visítame en Twitch',
   },
 
   // AboutMe
@@ -138,10 +143,37 @@ export const es = {
     },
   },
 
+  // MoreAboutMe
+  moreAboutMe: {
+    title: 'Sobre mí',
+    platziChallenge: 'En 2021 me inscribí a un concurso en Platzi para crear una plataforma de e-commerce en tiempo récord, el proyecto realizado fue Foody+ en ese proyecto yo realicé la lógica del frontend y colaboré conjuntamente con personas extraordinarias de diferentes países.',
+    viewChallenge: 'Ver página del reto',
+    education: 'Actualmente me encuentro desarrollando mi carrera ingeniería en computación en la UAM-C, y lo complemento estudiando de manera autodidacta y a la vez con cursos en línea dentro de la plataforma educativa Platzi la cual me ha fomentado la idea de nunca parar de aprender y seguir creciendo como persona.',
+    platziProfile: 'Perfil de Platzi',
+  },
+
   // Footer
   footer: {
     copyright: '© Antonio Guzman',
     language: 'Idioma',
+  },
+
+  // Navigation
+  nav: {
+    home: 'Inicio',
+    aboutMe: 'Acerca de mí',
+    skills: 'Habilidades',
+    projects: 'Proyectos',
+    more: 'Conocer más',
+    contact: 'Contacto',
+    goToHome: 'Ir al inicio',
+    goToAboutMe: 'Ir a la sección acerca de mí',
+    goToSkills: 'Ir a la sección de habilidades',
+    goToProjects: 'Ir a la sección de proyectos',
+    goToMore: 'Conocer más de mí',
+    goToContact: 'Ir a la sección de contacto',
+    visitGithub: 'Visítame en Github',
+    visitLinkedin: 'Visítame en LinkedIn',
   },
 
   // Common
@@ -149,6 +181,7 @@ export const es = {
     learnMore: 'Saber más',
     viewProject: 'Ver proyecto',
     technologies: 'Tecnologías',
+    loading: 'Cargando...',
   },
 };
 

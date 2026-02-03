@@ -13,6 +13,11 @@ export const en: Translations = {
     welcome: 'Welcome to my portfolio!',
     title: "I'm Web Developer",
     subtitle: 'Senior Fullstack Developer | AI/ML Engineer',
+    visitFacebook: 'Visit me on Facebook',
+    visitTwitter: 'Visit me on Twitter',
+    visitInstagram: 'Visit me on Instagram',
+    visitLinkedin: 'Visit me on LinkedIn',
+    visitTwitch: 'Visit me on Twitch',
   },
 
   // AboutMe
@@ -140,10 +145,37 @@ export const en: Translations = {
     },
   },
 
+  // MoreAboutMe
+  moreAboutMe: {
+    title: 'About me',
+    platziChallenge: 'In 2021 I entered a Platzi contest to create an e-commerce platform in record time. The project was Foody+ where I developed the frontend logic and collaborated with extraordinary people from different countries.',
+    viewChallenge: 'View challenge page',
+    education: 'I am currently pursuing my Computer Engineering degree at UAM-C, complementing it with self-taught studies and online courses on the Platzi educational platform, which has instilled in me the idea of never stop learning and keep growing as a person.',
+    platziProfile: 'Platzi Profile',
+  },
+
   // Footer
   footer: {
     copyright: '© Antonio Guzman',
     language: 'Language',
+  },
+
+  // Navigation
+  nav: {
+    home: 'Home',
+    aboutMe: 'About me',
+    skills: 'Skills',
+    projects: 'Projects',
+    more: 'Learn more',
+    contact: 'Contact',
+    goToHome: 'Go to home',
+    goToAboutMe: 'Go to about me section',
+    goToSkills: 'Go to skills section',
+    goToProjects: 'Go to projects section',
+    goToMore: 'Learn more about me',
+    goToContact: 'Go to contact section',
+    visitGithub: 'Visit me on Github',
+    visitLinkedin: 'Visit me on LinkedIn',
   },
 
   // Common
@@ -151,5 +183,6 @@ export const en: Translations = {
     learnMore: 'Learn more',
     viewProject: 'View project',
     technologies: 'Technologies',
+    loading: 'Loading...',
   },
 };

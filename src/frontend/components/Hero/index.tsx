@@ -12,14 +12,14 @@ import Loading from '../Loading';
 import './hero.scss';
 
 const Hero = () => {
-  const { theme, socialMedia, socialMediaLoading } = useStateValue();
+  const { theme, socialMedia, socialMediaLoading, t } = useStateValue();
 
   return (
     <section className={`Hero ${theme}`}>
       <div className={`Hero--background ${theme}`} />
       <div className='Hero__body'>
-        <h3>Bienvenido a mi portafolio!</h3>
-        <h1>I&apos;m Web Developer</h1>
+        <h3>{t.hero.welcome}</h3>
+        <h1>{t.hero.title}</h1>
         <ul className='Hero__body--details'>
           <li>ReactJS</li>
           <li><FaCircleNotch size={10} /></li>
@@ -35,7 +35,7 @@ const Hero = () => {
               target='_blank'
               rel='noreferrer'
               href={socialMedia.facebook}
-              title='Visitame en Facebook'
+              title={t.hero.visitFacebook}
               className='btn-link-facebook'
             >
               <FaFacebookF />
@@ -45,7 +45,7 @@ const Hero = () => {
               rel='noreferrer'
               href={socialMedia.twitter}
               className='btn-link-twitter'
-              title='Visitame en Twitter'
+              title={t.hero.visitTwitter}
             >
               <FaTwitter />
             </a>
@@ -54,7 +54,7 @@ const Hero = () => {
               rel='noreferrer'
               href={socialMedia.instagram}
               className='btn-link-instagram'
-              title='Visitame en Instagram'
+              title={t.hero.visitInstagram}
             >
               <FaInstagram />
             </a>
@@ -63,7 +63,7 @@ const Hero = () => {
               rel='noreferrer'
               href={socialMedia.linkedin}
               className='btn-link-linkedin'
-              title='Visitame en Linkedin'
+              title={t.hero.visitLinkedin}
             >
               <FaLinkedinIn />
             </a>
@@ -72,7 +72,7 @@ const Hero = () => {
               rel='noreferrer'
               href={socialMedia.twitch}
               className='btn-link-twitch'
-              title='Visitame en Twitch'
+              title={t.hero.visitTwitch}
             >
               <FaTwitch />
             </a>

@@ -5,37 +5,38 @@ import { useStateValue } from '../../context';
 import './pageNav.scss';
 
 const PageNav = () => {
-  const { theme } = useStateValue();
+  const { theme, t } = useStateValue();
+
   return (
     <aside className={`PageNav ${theme}`}>
       <Link
         to='/'
-        title='Ir al inicio'
+        title={t.nav.goToHome}
         className='btn-outline-neon'
         onClick={() => window.scroll(0, 0)}
       >
         <FaHome size={25} />
-        <span>Inicio</span>
+        <span>{t.nav.home}</span>
       </Link>
-      <a href='#AboutMe' className='btn-outline-neon' title='Ir a la sección acerca de mi'>
+      <a href='#AboutMe' className='btn-outline-neon' title={t.nav.goToAboutMe}>
         <FaTeamspeak size={25} />
-        <span>Acerca de mi</span>
+        <span>{t.nav.aboutMe}</span>
       </a>
-      <a href='#Skills' className='btn-outline-neon' title='Ir a la sección acerca de mis habilidades'>
+      <a href='#Skills' className='btn-outline-neon' title={t.nav.goToSkills}>
         <FaChartLine size={25} />
-        <span>Habilidades</span>
+        <span>{t.nav.skills}</span>
       </a>
-      <a href='#Projects' className='btn-outline-neon' title='Ir a la sección acerca de proyectos'>
+      <a href='#Projects' className='btn-outline-neon' title={t.nav.goToProjects}>
         <FaVial size={25} />
-        <span>Proyectos</span>
+        <span>{t.nav.projects}</span>
       </a>
-      <a href='#More' className='btn-outline-neon' title='Conocer más de mi'>
+      <a href='#More' className='btn-outline-neon' title={t.nav.goToMore}>
         <FaGamepad size={25} />
-        <span>Conocer más</span>
+        <span>{t.nav.more}</span>
       </a>
-      <a href='#Contact' className='btn-outline-neon' title='Ir a la sección para contactarme'>
+      <a href='#Contact' className='btn-outline-neon' title={t.nav.goToContact}>
         <FaPaperPlane size={25} />
-        <span>Contacto</span>
+        <span>{t.nav.contact}</span>
       </a>
     </aside>
   );
