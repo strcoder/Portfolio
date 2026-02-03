@@ -1,6 +1,7 @@
 import React from 'react';
 import { useStateValue } from '../../context';
 import ProjectCard from '../ProjectCard';
+import Loading from '../Loading';
 import './projectList.scss';
 
 const images = [
@@ -10,33 +11,44 @@ const images = [
 ];
 
 const ProjectList = () => {
-  const { projects } = useStateValue();
+  const { projects, projectsLoading, projectsError } = useStateValue();
+
   return (
     <section className='Projects' id='Projects'>
       <div className='Projects__header'>
         <h2>Proyectos</h2>
         <p>Ahora que ya me conoces un poco, dejeme presentarte mis proyectos personales en los cuales pongo en practica todo lo aprendido</p>
-        {!projects && (
-          <p><strong>Loading...</strong></p>
-        )}
       </div>
-      <div className='Projects__body'>
-        {projects?.map((project: any, index: number) => (
-          <React.Fragment key={project._id}>
-            <ProjectCard
-              url={project.url}
-              date={project.startDate}
-              logo={project.logoUrl}
-              tags={project.tags}
-              title={project.name}
-              github={project.github}
-              bgColor='primary'
-              headerImage={images[index]}
-              description={project.description}
-            />
-          </React.Fragment>
-        ))}
-      </div>
+
+      {projectsLoading && (
+        <Loading message='Cargando proyectos...' />
+      )}
+
+      {projectsError && (
+        <div className='Projects__error'>
+          <p>Error al cargar los proyectos. Por favor intenta de nuevo.</p>
+        </div>
+      )}
+
+      {!projectsLoading && !projectsError && (
+        <div className='Projects__body'>
+          {projects?.map((project: any, index: number) => (
+            <React.Fragment key={project._id}>
+              <ProjectCard
+                url={project.url}
+                date={project.startDate}
+                logo={project.logoUrl}
+                tags={project.tags}
+                title={project.name}
+                github={project.github}
+                bgColor='primary'
+                headerImage={images[index % images.length]}
+                description={project.description}
+              />
+            </React.Fragment>
+          ))}
+        </div>
+      )}
     </section>
   );
 };

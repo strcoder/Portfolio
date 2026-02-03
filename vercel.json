@@ -1,7 +1,8 @@
 {
-  "version": 2,
-  "name": "portfolio",
+  "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "builds": [{ "src": "/dist/index.js", "use": "@vercel/node" }],
-  "routes": [{ "src": "/(.*)", "dest": "/dist/index.js" }]
+  "framework": "vite",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }

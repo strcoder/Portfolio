@@ -6,16 +6,20 @@ import { Provider } from './context';
 import App from './routes/App';
 import './scss/index.scss';
 
-const preloadedState = window.__PRELOADED_STATE__;
-delete window.__PRELOADED_STATE__;
-
 const app = document.getElementById('app');
-const root = createRoot(app!);
+
+if (!app) {
+  throw new Error('Root element #app not found');
+}
+
+const root = createRoot(app);
 
 root.render(
-  <Provider initialState={preloadedState}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </Provider>,
+  <React.StrictMode>
+    <Provider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
+  </React.StrictMode>,
 );

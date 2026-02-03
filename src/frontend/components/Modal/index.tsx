@@ -1,30 +1,27 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import { FaTimes } from 'react-icons/fa';
 import { useStateValue } from '../../context';
 import './styles.scss';
 
 type ModalProps = {
-  show: boolean,
-  title: string,
-  onClose: Function,
-  children: React.ReactElement,
-}
+  show: boolean;
+  title: string;
+  onClose: () => void;
+  children: React.ReactElement;
+};
 
 const Modal = ({ show, onClose, children, title }: ModalProps) => {
   const { theme } = useStateValue();
-  const [isBrowser, setIsBrowser] = useState(false);
 
-  useEffect(() => {
-    setIsBrowser(true);
-  }, []);
-
-  const handleCloseClick = (e: { preventDefault: () => void; }) => {
+  const handleCloseClick = (e: React.MouseEvent) => {
     e.preventDefault();
     onClose();
   };
 
-  const modalContent = show ? (
+  if (!show) return null;
+
+  const modalContent = (
     <section className='Modal'>
       <button
         type='button'
@@ -52,15 +49,12 @@ const Modal = ({ show, onClose, children, title }: ModalProps) => {
         </main>
       </div>
     </section>
-  ) : null;
+  );
 
-  if (isBrowser) {
-    return ReactDOM.createPortal(
-      modalContent,
-      document.getElementById('modal'),
-    );
-  }
-  return null;
+  const modalRoot = document.getElementById('modal');
+  if (!modalRoot) return null;
+
+  return ReactDOM.createPortal(modalContent, modalRoot);
 };
 
 export default Modal;

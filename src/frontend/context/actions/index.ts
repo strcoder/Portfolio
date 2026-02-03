@@ -1,50 +1,42 @@
-import axios from 'axios';
+import { sendMessage as apiSendMessage, sendEmail as apiSendEmail } from '../../services/api';
 
-export const setTheme = async ({ theme, dispatch }: any) => {
-  try {
-    document.cookie = `theme=${theme}`;
-    dispatch({ type: 'SET_THEME', theme });
-  } catch (error) {
-    dispatch({ type: 'SET_ERROR', error });
-  }
+// Theme action - now uses context's setTheme directly
+export const setTheme = ({ theme, dispatch }: { theme: string; dispatch: Function }) => {
+  dispatch({ type: 'SET_THEME', theme });
 };
 
-export const saveMessage = async ({ message, dispatch }: any) => {
+// Message action - now calls API directly
+export const saveMessage = async ({ message, dispatch }: {
+  message: { username: string; userMail: string; message: string };
+  dispatch: Function;
+}): Promise<boolean> => {
   try {
-    const response = await axios({
-      url: '/api/message',
-      method: 'post',
-      data: message,
-    }).then(({ data }) => {
+    const success = await apiSendMessage(message);
+    if (success) {
       dispatch({ type: 'SAVE_MESSAGE' });
-      return true;
-    }).catch((error) => {
-      dispatch({ type: 'SET_ERROR', error });
-      return false;
-    });
-    return response;
+    } else {
+      dispatch({ type: 'SET_ERROR', error: 'Failed to send message' });
+    }
+    return success;
   } catch (error) {
     dispatch({ type: 'SET_ERROR', error });
     return false;
   }
 };
 
-export const saveEmail = async ({ email, dispatch }: any) => {
+// Email action - now calls API directly
+export const saveEmail = async ({ email, dispatch }: {
+  email: string;
+  dispatch: Function;
+}): Promise<boolean> => {
   try {
-    const response = await axios({
-      url: '/api/mail',
-      method: 'post',
-      data: {
-        email,
-      },
-    }).then(({ data }) => {
+    const success = await apiSendEmail(email);
+    if (success) {
       dispatch({ type: 'SAVE_EMAIL' });
-      return true;
-    }).catch((error) => {
-      dispatch({ type: 'SET_ERROR', error });
-      return false;
-    });
-    return response;
+    } else {
+      dispatch({ type: 'SET_ERROR', error: 'Failed to save email' });
+    }
+    return success;
   } catch (error) {
     dispatch({ type: 'SET_ERROR', error });
     return false;

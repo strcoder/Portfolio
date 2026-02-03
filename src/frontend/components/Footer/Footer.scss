@@ -9,11 +9,24 @@
   bottom: 0;
 }
 
+.Footer__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  gap: 16px;
+
+  @include breakpoint('sm') {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
 .Footer__copyright {
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  padding: 16px;
 
   @include breakpoint('md') {
     grid-column-end: span 2;
@@ -21,5 +34,34 @@
 
   @include breakpoint('lg') {
     justify-self: stretch;
+  }
+}
+
+.Footer__language {
+  display: flex;
+  align-items: center;
+}
+
+.Footer__language-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: $light-color;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: $border-radius;
+  transition: background-color 0.2s ease;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-family: inherit;
+  font-size: 0.95rem;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  svg {
+    font-size: 1.25rem;
   }
 }

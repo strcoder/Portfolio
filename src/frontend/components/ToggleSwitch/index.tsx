@@ -1,18 +1,16 @@
 import React from 'react';
 import { FaCloud, FaStar, FaMoon, FaCircle } from 'react-icons/fa';
 import { useStateValue } from '../../context';
-import setTheme from '../../context/actions';
 import './toggleSwitch.scss';
 
 const ToggleSwitch = () => {
-  const { theme, dispatch } = useStateValue();
-  const newTheme: string = theme === 'light' ? 'dark' : 'light';
+  const { theme, toggleTheme } = useStateValue();
 
   return (
     <button
       type='button'
       className={`ToggleSwitch ${theme}`}
-      onClick={() => setTheme({ theme: newTheme, dispatch })}
+      onClick={toggleTheme}
       title='Cambiar tema'
     >
       <small className={`ToggleSwitch__body ${theme}`}>
@@ -32,12 +30,8 @@ const ToggleSwitch = () => {
         )}
       </small>
       <i className={`fas fa-${theme === 'light' ? 'circle' : 'moon'}`}>
-        {theme === 'light' && (
-          <FaCircle />
-        )}
-        {theme === 'dark' && (
-          <FaMoon />
-        )}
+        {theme === 'light' && <FaCircle />}
+        {theme === 'dark' && <FaMoon />}
       </i>
     </button>
   );

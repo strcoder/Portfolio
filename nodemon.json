@@ -1,6 +1,0 @@
-{
-  "$schema": "https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/nodemon.json",
-  "exec": "npm run build && node dist/index.js",
-  "ext": "tsx,ts,scss",
-  "watch": ["src/*"]
-}

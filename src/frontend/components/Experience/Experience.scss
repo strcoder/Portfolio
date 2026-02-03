@@ -4,8 +4,7 @@
 
 .Experience__timeline {
   & .lines {
-    // align-content: flex-start;
-    grid-template-rows: auto 1fr auto 1fr auto 1fr auto 1fr;
+    grid-template-rows: auto 1fr auto 1fr auto 1fr;
   }
 
   & .lines--active {
@@ -20,7 +19,6 @@
   }
 
   & .line {
-    // height: 140px;
     width: 2px;
     background: #d1d6e6;
     margin-left: 5.3px;
@@ -48,13 +46,12 @@
 .Experience__timeline--container {
   display: grid;
   gap: 24px;
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   width: 100%;
 }
 
 .Experience__timeline--item {
   display: grid;
-  // height: 140px;
   text-align: left;
   background-color: transparent;
   border: none;
@@ -73,13 +70,24 @@
   gap: 8px;
 }
 
+.Experience__bullets {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 8px 0 0 0;
+
+  li {
+    padding: 4px 0;
+    line-height: 1.5;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .Experience {
     padding: 25px 10%;
   }
 
   .Experience__timeline--container {
-    grid-template-rows: repeat(4, auto);
+    grid-template-rows: repeat(3, auto);
   }
 }
 
@@ -89,6 +97,6 @@
   }
 
   .Experience__timeline--container {
-    grid-template-rows: repeat(4, auto);
+    grid-template-rows: repeat(3, auto);
   }
 }

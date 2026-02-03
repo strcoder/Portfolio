@@ -1,0 +1,41 @@
+.Loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+
+  &__spinner {
+    animation: spin 1s linear infinite;
+    color: var(--primary-color, #3498db);
+  }
+
+  &__message {
+    margin-top: 1rem;
+    color: var(--text-color, #333);
+    font-size: 0.9rem;
+  }
+
+  &--small {
+    padding: 0.5rem;
+    flex-direction: row;
+    gap: 0.5rem;
+
+    .Loading__message {
+      margin-top: 0;
+    }
+  }
+
+  &--large {
+    padding: 4rem;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

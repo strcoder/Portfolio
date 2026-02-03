@@ -6,6 +6,42 @@
   padding-top: 16px;
 }
 
+.AboutMe__intro {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.AboutMe__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.AboutMe__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  svg {
+    font-size: 1.1rem;
+  }
+}
+
+.AboutMe__badge--remote {
+  background-color: #10b981;
+  color: white;
+}
+
+.AboutMe__badge--location {
+  background-color: #3b82f6;
+  color: white;
+}
+
 .AboutMe__body--description {
   padding: 8px 0;
 }

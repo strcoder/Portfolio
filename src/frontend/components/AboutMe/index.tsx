@@ -1,49 +1,37 @@
 import React from 'react';
 import { Box, Link, Typography } from 'eduli-ui';
+import { MdLocationOn, MdPublic } from 'react-icons/md';
+import { useStateValue } from '../../context';
 import './AboutMe.scss';
 
 const AboutMe = () => {
+  const { t } = useStateValue();
+
   return (
     <Box component='section' id='AboutMe' className='AboutMe'>
       <Typography component='h3' variant='h3'>
-        ¡Bienvenido a mi portafolio!
+        {t.aboutMe.title}
       </Typography>
       <Box className='AboutMe__body' display='grid' gap='sm'>
-        <Typography>
-          {' '}
-          Mi nombre es
-          {' '}
-          <Typography component='strong'>Antonio Guzmán</Typography>
+        <Typography className='AboutMe__intro'>
+          {t.aboutMe.intro}
         </Typography>
         <Typography>
-          Soy un desarrollador web con más de 5 años de experiencia. Estoy
-          enfocado en la creación de soluciones de alto impacto, trabajando en
-          equipo y aplicando las mejores prácticas de desarrollo. Me apasiona
-          enfrentar nuevos retos, aprender constantemente y compartir
-          conocimientos con la comunidad.
+          {t.aboutMe.paragraph1}
         </Typography>
         <Typography>
-          Mis principales habilidades están en frontend, desarrollando
-          aplicaciones escalables y optimizadas con React, Next.js y Angular.
+          {t.aboutMe.paragraph2}
         </Typography>
-        <Typography>
-          También cuento con experiencia en backend con Node.js y NestJS, además
-          de integrar inteligencia artificial para potenciar soluciones
-          innovadoras. Siempre busco mejorar la experiencia del usuario,
-          optimizar el rendimiento de las aplicaciones y trabajar con
-          arquitecturas escalables.
-        </Typography>
-        <Typography>
-          Mi objetivo es seguir creciendo como profesional, aportando valor a
-          cada proyecto en el que participo.
-        </Typography>
-        <Typography className='AboutMe__footer--contact'>
-          Si quieres platicar un poco contactame.
-          {' '}
-          <Link href='mailto:aguzmanv09@gmail.com'>
-            aguzmanv09@gmail.com
-          </Link>
-        </Typography>
+        <Box className='AboutMe__badges'>
+          <Typography className='AboutMe__badge AboutMe__badge--remote'>
+            <MdPublic />
+            {t.aboutMe.availableRemote}
+          </Typography>
+          <Typography className='AboutMe__badge AboutMe__badge--location'>
+            <MdLocationOn />
+            {t.aboutMe.location}
+          </Typography>
+        </Box>
       </Box>
     </Box>
   );

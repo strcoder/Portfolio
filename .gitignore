@@ -114,5 +114,19 @@ psd
 thumb
 sketch
 
-src/server/public
 scratch
+
+### Vite ###
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
