@@ -25,7 +25,7 @@ const AboutMe = () => {
         <Box className='AboutMe__badges'>
           <Typography className='AboutMe__badge AboutMe__badge--remote'>
             <MdPublic />
-            {t.aboutMe.availableRemote}
+            
           </Typography>
           <Typography className='AboutMe__badge AboutMe__badge--location'>
             <MdLocationOn />
